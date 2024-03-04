@@ -1,0 +1,212 @@
+/*estilizacao login e cadastro (login e signup)*/
+body{
+    font-family:'Inter';
+    background-color: #081433;
+    color: #fff;
+}
+
+.enter a{ 
+    text-decoration: none;
+    color: #0893BF;
+}
+
+#login{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+#form-signup, #form-login{
+    flex-direction: column;
+    display:flex;
+    align-items: center;
+}
+
+#name{
+    border-radius:15px;
+    border:none;
+    width:400px;
+    height:40px;
+    padding-left:15px;
+    background-color: #273565;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+#email{
+    border-radius:15px;
+    border:none;
+    width:400px;
+    height:40px;
+    padding-left:15px;
+    background-color: #273565;
+    color: white;
+    font-size: 20px;
+}
+
+#password{
+    border-radius:15px;
+    border:none;
+    width:400px;
+    height:40px;
+    padding-left:15px;
+    background-color: #273565;
+    color: white;
+    margin-top:15px;
+    font-size: 20px;
+}
+
+input::placeholder{
+    color: white;
+}
+
+h1 {
+    color: #fafafa;
+}
+
+.img-login{
+    width:350px;
+    margin-bottom: 10px;
+    margin-top: 80px;
+}
+
+.img-signup{
+    width:300px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#button-cadastrar, #button-entrar{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border:none;
+    background-color: #0893BF;
+}
+
+button a:-webkit-any-link{
+    text-decoration: none;
+    color:#081433;
+}
+
+/*estilizacao pagina inicial (postCrud)*/
+.search{
+    height: 70px;
+    display:flex;
+    align-items: center;
+    border: solid;
+}
+
+#btnPesquisar p{
+    margin-left: 5px;
+    border: solid;
+}
+#btnAdd p{
+    margin-left: 5px;
+}
+
+.img-search{
+    margin-top: 3px;
+    margin-left: 10rem;
+}
+
+
+.search button{
+    margin-bottom: 1rem;
+    margin-top:20px;  
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    border:none;
+    background-color: rgba(46, 123, 158, 0.4);
+    cursor: pointer;
+    color: white;
+    border:solid;
+    display: flex;
+    align-items: center;    
+}
+.post-example {
+    margin-top: 3rem;
+    background-color: rgb(171, 171, 171,40%);
+    width:70%;
+    padding:0;
+    height:6rem;
+    display:flex;
+    border-radius: 10px;
+    border:solid
+}
+
+.post-example h3{
+    margin-left:1rem;
+    color:#FB8686;
+    height:20px;
+    margin-top:0.5rem;
+    font-family: 'Inconsolata';
+}
+
+.post-example p{
+    margin-top: 2rem;
+    width:auto;
+    height:auto;
+    margin-left:-12rem;
+}
+
+.img-post{
+    margin-top: 2px;
+}
+
+#btnAdd{
+    width:120px;
+    height:40px;
+    margin-left: 10px;
+}
+.img-add{
+    margin-left:5px;
+}
+
+#see-comments{
+    border:none;
+    width:150px;
+    font-family: 'HANALEI FILL';
+    color:#9DB3EB;
+    background-color: #081433;
+    cursor: pointer;
+    margin-right: 10rem;
+}
+
+#write-comments{
+    border:none;
+    width:150px;
+    font-family: 'HANALEI FILL';
+    color:#9DB3EB;
+    background-color: #081433;
+    cursor: pointer;
+    margin-left: 35rem;
+}
+
+.home-page{
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    display:flex;
+    align-items: center;
+}
+
+/*extra fonts*/
+.hanalei-fill-regular {
+    font-family: "Hanalei Fill", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .inconsolata {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
