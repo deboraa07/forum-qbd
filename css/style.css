@@ -1,4 +1,4 @@
-/*estilizacao login e cadastro (login e signup)*/
+/*login and signup style (login e signup)*/
 body{
     font-family:'Inter';
     background-color: #081433;
@@ -92,18 +92,18 @@ button a:-webkit-any-link{
     color:#081433;
 }
 
-/*estilizacao pagina inicial (postCrud)*/
+/*home page style (postCrud)*/
 .search{
     height: 70px;
-    display:flex;
-    align-items: center;
-    border: solid;
+    display: flex;
 }
 
-#btnPesquisar p{
-    margin-left: 5px;
-    border: solid;
+#btnPesquisar{
+    width:auto;
+    height: auto;
+    padding-left: 10rem;
 }
+
 #btnAdd p{
     margin-left: 5px;
 }
@@ -128,6 +128,7 @@ button a:-webkit-any-link{
     display: flex;
     align-items: center;    
 }
+
 .post-example {
     margin-top: 3rem;
     background-color: rgb(171, 171, 171,40%);
