@@ -1,12 +1,13 @@
-/*require('dotenv').config();
+require('dotenv').config();
 const Usuario = require('../models/Usuario')
 
 const url = process.env.DB_URL;
 const user = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
-*/
+
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "";
+const uri = url;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -30,4 +31,3 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
