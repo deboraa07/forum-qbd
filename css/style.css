@@ -85,6 +85,7 @@ h1 {
     border-radius: 20px;
     border:none;
     background-color: #0893BF;
+    cursor: pointer;
 }
 
 button a:-webkit-any-link{
