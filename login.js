@@ -12,7 +12,7 @@ async function salvar(){
       senha: document.getElementById('password').value
 };
 console.log(obj);
-await fetch("localhost:3000/usuarios",{
+await fetch("//localhost:3000/usuarios",{
   method: 'POST',
   mode: 'cors',
   headers: {

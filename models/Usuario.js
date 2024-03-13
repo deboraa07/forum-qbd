@@ -8,8 +8,8 @@ const usuarioSchema = new Schema({
   password: String
 },{collection: 'usuarios'});
 
-usuarioSchema.index({nome:'text', email:'text'},{default_language:'pt', weights:{nome:2, email:1}});
+usuarioSchema.index({nome:'text', email:'text', password:'text'},{default_language:'pt', weights:{nome:2, email:1, password:1}});
 
-  const Usuario = mongoose.model('Usuario', usuarioSchema);
+const Usuario = mongoose.model('Usuario', usuarioSchema);
 
-  module.exports = Usuario;
+module.exports = Usuario;
