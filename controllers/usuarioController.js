@@ -4,7 +4,7 @@ const listarUsuarios = async (req,res) => {
     Usuario.find({},{_id:true, __v:false}).then(result => {
      res.status(200).send(result);
      }).catch(e => res.status(400).send(e));
- }
+}
  
  const buscarPorConteudo = async (req,res) =>{
      Usuario.find({$text:{$search:req.params.conteudo}},{_id:true,__v:false}).then(result => {

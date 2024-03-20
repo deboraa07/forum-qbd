@@ -18,7 +18,7 @@ body{
     flex-direction: column;
 }
 
-#form-signup, #form-login{
+#form-signup, #formLogin{
     flex-direction: column;
     display:flex;
     align-items: center;

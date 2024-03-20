@@ -1,5 +1,5 @@
 //user registration
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
   const cadastrar = document.getElementById('button-cadastrar');
   cadastrar.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -28,3 +28,4 @@ async function salvar() {
   document.getElementById('email').value = '';
   document.getElementById('password').value = '';
 }
+
