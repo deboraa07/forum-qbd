@@ -12,9 +12,8 @@ async function salvar() {
     nome: document.getElementById('name').value,
     email: document.getElementById('email').value,
     senha: document.getElementById('password').value
-  };
+  }
   console.log(obj);
-    
   await fetch("//localhost:3000/usuarios", {
     method: 'POST',
     mode: 'cors',
@@ -24,8 +23,11 @@ async function salvar() {
     },
     body: JSON.stringify(obj)
   });
+  window.alert('Usuario cadastrado com sucesso');
+  
   document.getElementById('name').value = '';
   document.getElementById('email').value = '';
   document.getElementById('password').value = '';
 }
+
 
