@@ -6,8 +6,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.2.2",
-    "nodemon": "^2.0.22",
-    "require": "^2.4.20"
+    "nodemon": "^2.0.22"
   },
   "name": "forum-qbd",
   "description": "",

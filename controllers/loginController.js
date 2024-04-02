@@ -21,13 +21,9 @@ const fazerLogin = async (req,res) => {
     if(!await bcrypt.compare(senha, usuario.senha))
       return res.status(400).send({error: 'Senha invalida'});
 
-  const token = jwt.sign({id: usuario.id}, authConfig.secret, {
-    expiresIn: 86400,
-  });
-
       res.send({usuario,
          token: generateToken ({id: usuario.id}),
         });
 }
 
-module.exports = {fazerLogin, generateToken};
+module.exports = {fazerLogin};
