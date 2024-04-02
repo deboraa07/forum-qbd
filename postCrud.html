@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/crud.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     <div class="home-page">
     <div class="search">
       <button id="btnPesquisar">
-        Qual tópico deseja saber sobre, Dev?
+       <p> Qual tópico deseja saber sobre, Dev? </p>
         <img class="img-search" src="assets/lupa.png" alt="logo">
         <button id="btnAdd">
           <p>Adicionar tópico</p>
@@ -25,19 +25,44 @@
       </button>
     </div>
 
-      <div class="post-example">
+    <button id="btnListar">Lista de Posts</button>
+      <!---<div class="post-example">
         <img class="img-post" src="assets/Logo-login.svg" alt="logo">
-
         <h3>Trabalho de conclusão</h3>
         <p>Já indiquei pros meus amigos &#128064;</p>
-        </div>
+      </div>
+
       <div class="comments">
         <button id="see-comments">VER COMENTÁRIOS</button>
         <button id="write-comments">ESCREVER COMENTÁRIO:</button>
+      </div>--->
+      
+      <div id="posts"></div>
+      <script src="./posts/posts.js"></script>
+
+      <div id="modalContainer" class="modal-container">
+        <div class="modal-content">
+          <h3 class="modal-title">Editar Post</h3>
+          <form id="postForm">
+            <div class="form-group">
+              <label for="inputAutor">Autor:</label>
+              <input type="text" id="inputAutor" placeholder="Digite seu nome:">
+            </div>
+            <div class="form-group">
+              <label for="inputTitulo">Titulo:</label>
+              <input type="text" id="inputTitulo" placeholder="Digite o título do post">
+            </div>
+            <div class="form-group">
+              <label for="inputConteudo">Conteudo:</label>
+              <input type="text" id="inputConteudo" placeholder="Digite o conteudo do post">
+            </div>
+          </form>
+          <div class="modal-buttons">
+            <button id="cancelarBtn">Cancelar</button>
+            <button id="salvarBtn">Salvar</button>
+          </div>
+        </div>
       </div>
     </div>
-
-      <!---<div id="posts"></div> -->
-
     </body>
     </html>
