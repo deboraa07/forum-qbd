@@ -18,17 +18,29 @@ window.onload = () => {
        posts.forEach(post => {
          const postDiv = document.createElement('div');
          postDiv.classList.add('post-container');
+        
+        const logoDiv = document.createElement('div');
+         logoDiv.classList.add('logo-container');
+         postDiv.appendChild(logoDiv);
 
+        const logo = document.createElement('img');
+        logo.src = `./assets/Logo-login.svg`;
+        logo.classList.add('logo');
+        logoDiv.appendChild(logo);
+         
          const autorP = document.createElement('p');
-         autorP.textContent = `Autor: ${post.autor}`;
+         autorP.textContent = `${post.autor}`;
+         autorP.classList.add('autorP');
          postDiv.appendChild(autorP);
-
+         
          const tituloP = document.createElement('p');
-         tituloP.textContent = `Título: ${post.titulo}`;
+         tituloP.textContent = `${post.titulo}`;
+         tituloP.classList.add('tituloP');
          postDiv.appendChild(tituloP);
-
+         
          const conteudoP = document.createElement('p');
-         conteudoP.textContent = `Conteúdo: ${post.conteudo}`;
+         conteudoP.textContent = `${post.conteudo}`;
+         conteudoP.classList.add('conteudoP');
          postDiv.appendChild(conteudoP);
          
          postsDiv.appendChild(postDiv);
@@ -135,7 +147,10 @@ window.onload = () => {
               posts.forEach(post => {
                 const postDiv = document.createElement('div');
                 postDiv.classList.add('post-container');
-  
+
+                const logo = document.createElement('img');
+                logo.src = `./assets/Logo-login.svg`;
+                postDiv.appendChild(logo);
   
                 const autorP = document.createElement('p');
                 autorP.textContent = `Autor: ${post.nome}`;
