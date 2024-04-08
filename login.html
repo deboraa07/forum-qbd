@@ -20,5 +20,12 @@
     <button id="button-entrar" type="submit"><a>Entrar</a></button>
 </form>
     </div>
+    <script>
+        const entrar = document.getElementById("button-entrar");
+        entrar.addEventListener("click", async (event) => {
+        event.preventDefault();
+        await logar();
+  });
+</script>
 </body>
 </html>
