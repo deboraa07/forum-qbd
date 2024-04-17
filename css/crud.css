@@ -98,7 +98,7 @@ body{
   width:90px;
   margin-left: 20px;
   margin-top: 50px;
-  position: fixed;
+  position: absolute;
 }
 
 .autorP{
@@ -132,7 +132,7 @@ body{
   min-height:3rem;
 }
 
-  .delete-button, .update-button {
+  .delete-button, .update-button, .create-button {
     border-radius: 20px;
     background-color: rgb(123, 147, 169, 47%);
     cursor:pointer;

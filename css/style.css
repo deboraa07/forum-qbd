@@ -36,7 +36,7 @@ body{
     font-size: 20px;
 }
 
-#email{
+#email, #autor{
     border-radius:15px;
     border:none;
     width:400px;
@@ -47,7 +47,7 @@ body{
     font-size: 20px;
 }
 
-#password{
+#password, #titulo{
     border-radius:15px;
     border:none;
     width:400px;
@@ -79,7 +79,7 @@ h1 {
     margin-bottom:10px;
 }
 
-#button-cadastrar, #button-entrar{
+#button-cadastrar, #button-entrar, #button-criar{
     width: 120px;
     height: 40px;
     border-radius: 20px;
@@ -92,6 +92,19 @@ h1 {
 button a:-webkit-any-link{
     text-decoration: none;
     color:#081433;
+}
+
+/*criar Post*/
+#conteudo{
+    border-radius:15px;
+    border:none;
+    width:400px;
+    height:300px;
+    padding-left:15px;
+    background-color: #273565;
+    color: white;
+    margin-top:15px;
+    font-size: 20px;
 }
 
 
