@@ -37,6 +37,7 @@
       conteudo: document.getElementById("conteudo").value,
     };
     console.log(post);
+    
     await fetch("//localhost:3000/posts", {
       method: "POST",
       mode: "cors",
@@ -53,6 +54,6 @@
     document.getElementById("conteudo").value = "";
   }
 });
-    </script>
+</script>
 </body>
 </html>
