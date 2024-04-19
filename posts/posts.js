@@ -53,7 +53,6 @@ window.onload = () => {
             conteudoP.classList.add("conteudoP");
             postDiv.appendChild(conteudoP);
 
-            postsDiv.appendChild(postDiv);
 
             //deletar posts
 
@@ -74,28 +73,44 @@ window.onload = () => {
             postDiv.appendChild(deleteButton);
 
             //atualiza post
-
             const updateButton = document.createElement("button");
             updateButton.classList.add("update-button");
             updateButton.textContent = "Atualizar";
+            
             updateButton.addEventListener("click", () => {
               const modalContainer = document.getElementById("modalContainer");
-              modalContainer.style.display = "block";
+              modalContainer.innerHTML = "";
 
-              document.getElementById("inputAutor").value = post.autor;
-              document.getElementById("inputTitulo").value = post.titulo;
-              document.getElementById("inputConteudo").value = post.conteudo;
+              const inputAutor =  document.createElement("input");
+              inputAutor.id = "inputAutor";
+              inputAutor.value = post.autor;
 
-              const salvarBtn = document.getElementById("salvarBtn");
-              salvarBtn.addEventListener("click", () => {
-                const novoAutor = document.getElementById("inputAutor").value;
-                const novoTitulo = document.getElementById("inputTitulo").value;
-                const novoConteudo = document.getElementById("inputConteudo").value;
+              const inputTitulo =  document.createElement("input");              
+              inputTitulo.id = "inputTitulo";
+              inputTitulo.value = post.titulo;
 
+              const inputConteudo =  document.createElement("textarea");
+              inputConteudo.id = "inputConteudo";
+              inputConteudo.value = post.conteudo;
+
+              const salvarBtn =  document.createElement("button");
+              salvarBtn.id = "salvarBtn";
+              salvarBtn.textContent = "Salvar";
+              
+              const cancelarBtn =  document.createElement("button");
+              cancelarBtn.id = "salvarBtn";
+              cancelarBtn.textContent = "Cancelar";   
+
+              salvarBtn.addEventListener("click",  () => {
+                const novoAutor = inputAutor.value;
+                const novoTitulo = inputTitulo.value;
+                const novoConteudo = inputConteudo.value;
+
+              
                 const dadosAtualizados = {
-                  autor: novoAutor !== "" ? novoAutor : post.autor,
-                  titulo: novoTitulo !== "" ? novoTitulo : post.titulo,
-                  conteudo: novoConteudo !== "" ? novoConteudo : post.conteudo,
+                autor: novoAutor !== "" ? novoAutor : post.autor,
+                titulo: novoTitulo !== "" ? novoTitulo : post.titulo,
+                conteudo: novoConteudo !== "" ? novoConteudo : post.conteudo,
                 };
 
                 fetch(`//localhost:3000/posts/${post._id}`, {
@@ -107,24 +122,30 @@ window.onload = () => {
                 })
                   .then((response) => response.text())
                   .then((message) => {
-                    console.log(message); // Exibe a mensagem de sucesso ou erro no console
-                    btnListar.click(); // Atualiza a lista de eventos
-                  })
+                    console.log(message); 
+                    btnListar.click();    
+                    modalContainer.style.display = "none";
+                })               
                   .catch((error) => {
                     console.error(error);
                   });
-
-                modalContainer.style.display = "none";
               });
 
-              const cancelarBtn = document.getElementById("cancelarBtn");
               cancelarBtn.addEventListener("click", () => {
                 modalContainer.style.display = "none";
               });
+              
+             modalContainer.appendChild(inputAutor);
+             modalContainer.appendChild(inputTitulo);
+             modalContainer.appendChild(inputConteudo);
+             modalContainer.appendChild(salvarBtn);
+             modalContainer.appendChild(cancelarBtn);
+
+             modalContainer.style.display = "block";
             });
             postDiv.appendChild(updateButton);
+            postsDiv.appendChild(postDiv);
           });
-
           listaVisivel = true;
         })
         .catch((error) => {
