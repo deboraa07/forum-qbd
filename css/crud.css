@@ -132,7 +132,7 @@ body{
   min-height:3rem;
 }
 
-  .delete-button, .update-button, .create-button {
+  .delete-button, .update-button{
     border-radius: 20px;
     background-color: rgb(123, 147, 169, 47%);
     cursor:pointer;
@@ -143,7 +143,7 @@ body{
     margin-bottom: 8px;
     margin-right: 8px;
 }
-/*#posts estiliza o conjunto de posts*/
+/*estiliza o conjunto de posts*/
   #posts{
     display: flex;
     flex-direction: column;
@@ -166,92 +166,54 @@ body{
         box-shadow: 0 0 20px #A9A9A9;
       }
 
-      .modal-container {
+      #modalContainer {
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
-        z-index: 9999;
-}
-
-      /*manipula o conteudo do modal*/
-      .modal-content {
-        width: 500px;
         padding: 20px;
         border-radius: 15px;
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 800px;
+        height: fit-content;
         transform: translate(-50%, -50%);
-        text-align: center;    
-      }
-      /*titulo do modal*/
-      .modal-title {
-        margin-top: 0;
-        font-style: italic;
-      }
-      
-      /*.postForm {
-        display: flex;
-        flex-direction: column;
-     }*/
-     
-      /*estiliza cada input com sua propria label juntos*/
-      .form-group {
-        margin-bottom: 10px;
-      }
+}
 
-      /*estiliza as labels dos inputs do modal*/
-      .form-group label {
-        font-family: 'Inconsolata';
-        display: block;
-        padding: 5px;
-        font-size: 20px;
-        color:#0893BF;
-      }
-      /*estiliza os quadrados em si onde o usuario colocara os novos dados*/
-      .form-group input, textarea{
+      #modalContainer h2{
+      text-align: center;
+      margin-bottom: 3rem;
+      margin-top: 5rem;
+}
+     
+      #inputAutor,#inputConteudo, #inputTitulo{
+        display: flex;
+        margin-top: 20px;
         width:fit-content;
+        min-width: 300px;
         height: fit-content;
         padding: 5px;
-        border: 1px solid #ccc;
+        border: 1px solid #0893BF;;
         background-color: #ccc;
         border-radius: 5px;
         box-sizing: border-box;
-      }
-      /*manipula a organizacao dos botoes do modal entre si*/
-      .modal-buttons {
-        display: flex;
-        margin-top: 20px;
-        width: 50%;
-        height: 30px;
-        margin-left: 7rem;    
+        font-size: 15px;
+        margin-left: 32%;
+
       }
       /*estiliza os botoes do modal*/
-      .modal-buttons button {
-        width: 50%;
+     #cancelarBtn, #salvarBtn{
+        width: 30%;
         height: 30px;
-        padding: 5px 10px;
+        padding: 5px 20px;
         border-radius: 20px;
         background-color: rgba(46, 123, 158, 0.4);
         cursor:pointer;
         outline: 0;
-        color: #f2eee3;
+        color: floralwhite;
         font-size: 15px;
         font-weight: 400;
-        position: relative;
-        margin-left: 10px;
-}
-      
-      /*estiliza o textarea do modal*/
-      textarea{
-          width: fit-content;
-          height: fit-content;
-          font-size: 15px;
-          padding: 10px;
+        margin-top: 3rem;
+        margin-left: 7rem;
 }
 /*controla a home inteira*/
 .home-page{

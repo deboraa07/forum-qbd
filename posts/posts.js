@@ -81,17 +81,23 @@ window.onload = () => {
               const modalContainer = document.getElementById("modalContainer");
               modalContainer.innerHTML = "";
 
+              const modalTitle = document.createElement("h2");
+              modalTitle.textContent = "Atualizar Post";
+              
               const inputAutor =  document.createElement("input");
               inputAutor.id = "inputAutor";
               inputAutor.value = post.autor;
-
-              const inputTitulo =  document.createElement("input");              
+              inputAutor.placeholder = "Autor";
+              
+              const inputTitulo =  document.createElement("input");
               inputTitulo.id = "inputTitulo";
               inputTitulo.value = post.titulo;
+              inputTitulo.placeholder = "Título";
 
               const inputConteudo =  document.createElement("textarea");
               inputConteudo.id = "inputConteudo";
               inputConteudo.value = post.conteudo;
+              inputConteudo.placeholder = "Conteúdo";
 
               const salvarBtn =  document.createElement("button");
               salvarBtn.id = "salvarBtn";
@@ -134,7 +140,8 @@ window.onload = () => {
               cancelarBtn.addEventListener("click", () => {
                 modalContainer.style.display = "none";
               });
-              
+            
+             modalContainer.appendChild(modalTitle);
              modalContainer.appendChild(inputAutor);
              modalContainer.appendChild(inputTitulo);
              modalContainer.appendChild(inputConteudo);

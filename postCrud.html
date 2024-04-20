@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/crud.css" />
+  <link rel="stylesheet" type="text/css" href="../forum-qbd/css/crud.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script defer src="../forum-qbd/posts/posts.js"></script>
+  <script src="../forum-qbd/posts/posts.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   <title>Página Inicial - Qual a boa,Dev?</title>
 </head>
@@ -19,7 +19,7 @@
       <button id="btnPesquisar">
        <p> Qual tópico deseja saber sobre, Dev? </p>
         <img class="img-search" src="assets/lupa.png" alt="logo">
-        <button id="btnAdd" href = "criarPost.html">
+        <button <a href = "criarPost.html" id="btnAdd"></a>
           <p>Adicionar post</p>
           <img class="img-add" src="assets/plus.png" alt="adicionar">
         </button>
@@ -31,49 +31,6 @@
       <div id="posts"></div>
 
       <div id="modalContainer" class="modal-container">
-        <div class="modal-content">
-          <h3 class="modal-title">Post</h3>
-          <form id="postForm">
-            <div class="form-group">
-              <label for="inputAutor">Autor:</label>
-              <input type="text" id="inputAutor" placeholder="Digite seu nome:">
-              <input type="hidden" id="inputAutorId" name="autorId">
-              <div id="inputAutorNome"></div>
-            </div>
-            <div class="form-group">
-              <label for="inputTitulo">Título:</label>
-              <input type="text" id="inputTitulo" placeholder="Digite o título do post">
-            </div>
-            <div class="form-group">
-              <label for="inputConteudo">Conteúdo:</label>
-              <textarea type="text" id="inputConteudo" placeholder="Digite o conteúdo do post"></textarea>
-            </div>
-          </form>
-          <div class="modal-buttons">
-            <button id="cancelarBtn">Cancelar</button>
-            <button id="salvarBtn">Salvar</button>
-          </div>
-        </div>
-          <div id="modalCriarContainer" class="modal-container">
-            <div class="modal-content">
-              <h3 class="modal-title">Post</h3>
-              <form id="postForm">
-                <div class="form-group">
-                  <label for="autor">Autor:</label>
-                  <input type="text" id="autor" placeholder="Digite seu nome:">
-                </div>
-                <div class="form-group">
-                  <label for="titulo">Título:</label>
-                  <input type="text" id="titulo" placeholder="Digite o título do post">
-                </div>
-                <div class="form-group">
-                  <label for="conteudo">Conteúdo:</label>
-                  <textarea type="text" id="conteudo" placeholder="Digite o conteúdo do post"></textarea>
-                </div>
-              </form>
-              <div class="modal-buttons">
-                <button id="cancelarCriarBtn">Cancelar</button>
-                <button id="salvarCriarBtn">Salvar</button>
         </div>
       </div>
     </div>
