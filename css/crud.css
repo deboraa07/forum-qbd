@@ -19,9 +19,6 @@ body{
     padding-left: 3rem;
 }
 
-#btnAdd p{
-    margin-left: 5px;
-}
 
 .img-search{
     margin-top: 3px;
@@ -48,18 +45,19 @@ body{
     box-shadow: 0 0 20px #A9A9A9;
 }
 
+
 #btnAdd{
+  text-decoration: none;
+  color:white;
+  width:70px;
+}
+
+#add{
     width:120px;
     height:40px;
     margin-left: 10px;
-}
-
-#btnAdd:hover{
-    box-shadow: 0 0 20px #A9A9A9;
-  }
-
-.img-add{
-    margin-left:5px;
+    text-decoration: none;
+    padding-left: 2px;
 }
 
 .ver-comentarios{

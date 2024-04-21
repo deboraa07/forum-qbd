@@ -18,7 +18,7 @@ body{
     flex-direction: column;
 }
 
-#form-signup, #formLogin{
+#form-signup, #formLogin, #form-create{
     flex-direction: column;
     display:flex;
     align-items: center;
@@ -107,7 +107,9 @@ button a:-webkit-any-link{
     font-size: 20px;
 }
 
-
+.Logo-create{
+    margin-bottom: 10px;
+}
 /*extra fonts*/
 .hanalei-fill-regular {
     font-family: "Hanalei Fill", system-ui;
