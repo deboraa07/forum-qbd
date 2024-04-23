@@ -3,26 +3,63 @@ body{
     color: #fff;
 }
 /*home page style (postCrud)*/
+
 .search{
     height: 70px;
     display: flex;
     justify-content: center;
 }
 
+#searchInput{
+  border: solid 5px #0893BF;;
+        background-color: #ccc;
+        border-radius: 20px;
+        height:30px;
+        width: 500px;   
+}
+
+
+#confirmaPesquisa, #cancelaPesquisa{
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(123, 147, 169, 47%);
+  cursor: pointer;
+  color: white;
+  border:solid;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#confirmaPesquisa p, #cancelaPesquisa p{
+  margin-top: 10px;
+}
+
 #btnPesquisar{
-    width:500px;
-    height: auto;
-    display: flex;
+  margin-top:20px;  
+  width: 800px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(123, 147, 169, 47%);
+  cursor: pointer;
+  color: white;
+  border:solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #btnPesquisar p{
-    padding-left: 3rem;
+    padding-left: 1rem;
+    font-size: large;
 }
 
 
 .img-search{
     margin-top: 3px;
-    margin-left: 10rem;
+    width:20px;
+    height: 20px;
+    margin-left: 10px;
 }
 
 
@@ -150,6 +187,7 @@ body{
   }
 
     #btnListar{
+    margin-top: 10px;
     width: 20%;
     height: 30px;
     border-radius: 20px;
@@ -157,7 +195,6 @@ body{
     cursor:pointer;
     color:white;
     border: solid white;
-    margin-left: 40%;
 }
 
     #btnListar:hover{
@@ -217,4 +254,6 @@ body{
 .home-page{
     display: flex;
     flex-direction: column;
+    align-items: center;
+
 }
