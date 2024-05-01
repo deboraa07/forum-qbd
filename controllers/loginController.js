@@ -20,11 +20,12 @@ const fazerLogin = async (req, res) => {
   if (!(await bcrypt.compare(senha, usuario.senha)))
     return res.status(400).send({ error: "Senha invalida" });
 
-  res.send({ usuario, token: generateToken({ id: usuario.id }) });
+  res.send({ usuario:usuario.nome, token: generateToken({ id: usuario.id }) });
 };
 
 async function logar() {
   const obj = {
+    nome: localStorage.getItem("username"),
     email: document.getElementById("email").value,
     senha: document.getElementById("password").value,
   };
@@ -43,7 +44,10 @@ async function logar() {
 
   const data = await response.json();
   localStorage.setItem("token", data.token);
+  localStorage.setItem("username", data.usuario);
+  
   console.log(data.token);
+  console.log(data.usuario);
   if (response.ok) {
   window.location.assign("postCrud.html");
   }

@@ -13,7 +13,6 @@
 
         <img class="Logo-create" src="./assets/Logo-login.svg" alt="chat">
         <form id="form-create">
-            <input type="text" id="autor" placeholder="Autor:" autocomplete="off">
             <input type="text" id="titulo" placeholder="Título:" autocomplete="off">
             <textarea rows="5" cols="50" type="text" id="conteudo" placeholder="Digite o conteúdo do post:"></textarea>
     <div class="enter">
@@ -31,8 +30,8 @@
     });
 
     async function criarPost() {
-    const post = {
-      autor: document.getElementById("autor").value,
+      const post = {
+      autor: localStorage.getItem('username'),
       titulo: document.getElementById("titulo").value,
       conteudo: document.getElementById("conteudo").value,
     };
@@ -49,7 +48,6 @@
     });
     window.alert("Post criado com sucesso");
   
-    document.getElementById("autor").value = "";
     document.getElementById("titulo").value = "";
     document.getElementById("conteudo").value = "";
   }
