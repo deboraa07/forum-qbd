@@ -18,28 +18,45 @@
       <input type="text" id="searchInput" placeholder=" Digite aqui qual tópico deseja saber sobre, Dev!">
       <button id="confirmaPesquisa">
         <p>Pesquisar</p>
+
         <button id="cancelaPesquisa">
-          <p>Cancelar</p>
+        <p>Cancelar</p>
+
+        <button class="logout" onclick="logout()">
+        <p>Sair</p>
+        <img class="img-logout" src="assets/logout.png" alt="Logout">
+      </button>
+
       <button id="btnPesquisar">
         <p>Qual tópico deseja saber sobre dev?</p>
         <img class="img-search" src="assets/lupa.png" alt="logo">
       </button>
-      <a href="login.html">Login</a>
+
       
       <div class="search">
         <button id="add">
-        <a href = "criarPost.html" id="btnAdd">Adicionar post</a>
-        <img class="img-add" src="assets/plus.png" alt="adicionar">
+          <a href = "criarPost.html" id="btnAdd">Adicionar post</a>
+          <img class="img-add" src="assets/plus.png" alt="adicionar">
         </button>
-    </div>
-
-    <button id="btnListar">Postagens</button>
+      </div>
       
+      <button id="btnListar">Postagens</button>
+      
+
       <div id="posts"></div>
 
       <div id="modalContainer" class="modal-container">
         </div>
       </div>
     </div>
+    <script>
+      function logout(){
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userid");
+        window.location.href = "login.html";
+      }
+    </script>
     </body>
     </html>

@@ -36,7 +36,7 @@ body{
 }
 
 #btnPesquisar{
-  margin-top:20px;  
+  margin-top:10px;  
   width: 800px;
   height: 40px;
   border-radius: 20px;
@@ -95,6 +95,23 @@ body{
     margin-left: 10px;
     text-decoration: none;
     padding-left: 2px;
+}
+
+.logout{
+  cursor: pointer;
+  background-color: #081433;
+  margin-left: 90vw;
+  border:none;
+  color:white;
+  display:flex;
+}
+
+.logout img{
+  width:30px;
+}
+
+.logout p{
+  font-size: 12px;
 }
 
 .ver-comentarios{
@@ -197,9 +214,9 @@ body{
     border: solid white;
 }
 
-    #btnListar:hover{
+  #btnListar:hover, #btnPesquisar:hover{
         box-shadow: 0 0 20px #A9A9A9;
-      }
+   }
 
       #modalContainer {
         display: none;
