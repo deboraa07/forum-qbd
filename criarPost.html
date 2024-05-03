@@ -31,6 +31,13 @@
 
     async function criarPost() {
       const userId = localStorage.getItem("userId");
+      const token = localStorage.getItem("token");
+
+      /*if(!token){
+        console.log("Nao autenticado");
+        window.alert("Faça login ou cadastre-se!")
+        return;
+     }*/
 
       const post = {
       autorId: userId,
@@ -46,11 +53,10 @@
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(post),
     });
-
-    window.alert("Post criado com sucesso");
   
     document.getElementById("titulo").value = "";
     document.getElementById("conteudo").value = "";

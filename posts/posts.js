@@ -64,7 +64,13 @@ window.onload = () => {
             deleteButton.classList.add("delete-button");
             deleteButton.textContent = "Deletar";
             deleteButton.addEventListener("click", () => {
-              fetch(`//localhost:3000/posts/${post._id}`, { method: "DELETE" })
+              fetch(`//localhost:3000/posts/${post._id}`,{
+                 method: "DELETE",
+                 headers:{
+                  Accept:"application/json",
+                  "Content-Type":"application/json",
+                 }
+                 })
                 .then((response) => response.text())
                 .then((message) => {
                   console.log(message);
@@ -115,6 +121,7 @@ window.onload = () => {
                 const novoAutor = inputAutor.value;
                 const novoTitulo = inputTitulo.value;
                 const novoConteudo = inputConteudo.value;
+
 
               
                 const dadosAtualizados = {

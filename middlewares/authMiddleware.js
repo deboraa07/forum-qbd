@@ -1,38 +1,33 @@
-import jwt from 'jsonwebtoken'
-import authConfig from "../config/auth.json" assert {type:"json"};
+const jwt = require("jsonwebtoken");
+const authConfig = require("../config/auth.json");
 
-export function auth(req,res,next){
-    const authHeader = req.headers.authorization;
+const auth = (req,res,next) => {
+const authHeader = req.headers.authorization;
 
-    if(!authHeader) {
-        return res.status(401).send({error: 'Token nao fornecido'});
-    }
+    const parts = authHeader.split(' ');
 
-    const parts = authHeader.split('');
-
-    if(parts.length !== 2) {
-        return res.status(401).send({error:'Token mal formatado'});
+    if(parts.length !== 2){
+        showAlert("Faça login ou cadastre-se")
+        return res.status("token mal formatado");
     }
 
     const [scheme, token] = parts;
-
-    if(!/^Bearer$/i.test(scheme)){
-        return res.status(401).send({error:'Token mal formatado'});
+    if(scheme !== "Bearer"){
+        return res.status(401).send("Token invalido");
     }
+
 
     jwt.verify(token, authConfig.secret, (err,decoded) => {
         if(err) {
-            return res.status(401).send({error: 'Token inválido'});
-        }
-        console.log("Token dec:", decoded);
-
-        if(decoded.id || !decoded.username){
-            console.log("Payload do token invalido");
-            return res.status(401).send({error: 'Token invalido'});
+            return res.status(401).send({error: "Token inválido"});
         }
         req.user = decoded;
         return next();
     })
-};
+}
 
-export default auth;
+module.exports = auth;
+
+function showAlert(message){
+    alert(message);
+}

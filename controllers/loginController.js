@@ -52,7 +52,7 @@ async function logar() {
   if (response.ok) {
   window.location.assign("postCrud.html");
   }
-  window.alert("Erro ao fazer login");
+  window.alert("Usuário não existe");
 }
 
 module.exports = { fazerLogin };
