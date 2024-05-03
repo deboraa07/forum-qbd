@@ -5,6 +5,7 @@ window.onload = () => {
   const searchInput = document.getElementById("searchInput");
   const confirmaPesquisa = document.getElementById("confirmaPesquisa");
   const cancelaPesquisa = document.getElementById("cancelaPesquisa");
+  const userId = localStorage.getItem("userId");
   let listaVisivel = false;
 
   btnListar.addEventListener("click", () => {
@@ -58,7 +59,7 @@ window.onload = () => {
 
 
             //deletar posts
-
+            if(post.autorId === userId){
             const deleteButton = document.createElement("button");
             deleteButton.classList.add("delete-button");
             deleteButton.textContent = "Deletar";
@@ -74,7 +75,7 @@ window.onload = () => {
                 });
             });
             postDiv.appendChild(deleteButton);
-
+          
             //atualiza post
             const updateButton = document.createElement("button");
             updateButton.classList.add("update-button");
@@ -154,6 +155,7 @@ window.onload = () => {
              modalContainer.style.display = "block";
             });
             postDiv.appendChild(updateButton);
+          }
             postsDiv.appendChild(postDiv);
           });
           listaVisivel = true;
@@ -164,6 +166,8 @@ window.onload = () => {
         });
     }
   });
+
+
 
   //pesquisa de posts
   confirmaPesquisa.style.display = "none";
@@ -249,7 +253,7 @@ window.onload = () => {
                 
                 postDiv.appendChild(deleteButton);
                 
-                //atualização de posts para pesquisa
+              //atualização de posts para pesquisa
                 const updateButton = document.createElement("button");
                 updateButton.classList.add("update-button");
                 updateButton.textContent = "Atualizar";
@@ -286,8 +290,8 @@ window.onload = () => {
                   })
                   .then((response) => response.text())
                   .then((message) => {
-                    console.log(message); // Exibe a mensagem de sucesso ou erro no console
-                    btnListar.click(); // Atualiza a lista de eventos
+                    console.log(message); 
+                    btnListar.click(); 
                   })
                   .catch((error) => {
                     console.error(error);

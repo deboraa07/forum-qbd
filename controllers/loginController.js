@@ -3,13 +3,11 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authConfig = require("../config/auth");
 
-//gera token para usar no login
 function generateToken(params = {}) {
   return jwt.sign(params, authConfig.secret, {
     expiresIn: 86400,
   });
 }
-//autentica usuario
 const fazerLogin = async (req, res) => {
   const { email, senha } = req.body;
 
@@ -20,7 +18,7 @@ const fazerLogin = async (req, res) => {
   if (!(await bcrypt.compare(senha, usuario.senha)))
     return res.status(400).send({ error: "Senha invalida" });
 
-  res.send({ usuario:usuario.nome, token: generateToken({ id: usuario.id }) });
+  res.send({usuarioId:usuario.id, usuario:usuario.nome, token: generateToken({ id: usuario.id }) });
 };
 
 async function logar() {
@@ -45,9 +43,12 @@ async function logar() {
   const data = await response.json();
   localStorage.setItem("token", data.token);
   localStorage.setItem("username", data.usuario);
+  localStorage.setItem("userId",data.usuarioId);
   
-  console.log(data.token);
+  console.log(data.usuarioId);
   console.log(data.usuario);
+  console.log(data.token);
+  
   if (response.ok) {
   window.location.assign("postCrud.html");
   }

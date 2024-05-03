@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const postSchema = new Schema({
+  autorId:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Usuario'
+  },
   autor: String,
   titulo: String,
   conteudo: String,
