@@ -18,7 +18,11 @@ const fazerLogin = async (req, res) => {
   if (!(await bcrypt.compare(senha, usuario.senha)))
     return res.status(400).send({ error: "Senha invalida" });
 
-  res.send({usuarioId:usuario.id, usuario:usuario.nome, token: generateToken({ id: usuario.id }) });
+  res.send({
+    usuarioId: usuario.id,
+    usuario: usuario.nome,
+    token: generateToken({ id: usuario.id }),
+  });
 };
 
 async function logar() {
@@ -43,16 +47,16 @@ async function logar() {
   const data = await response.json();
   localStorage.setItem("token", data.token);
   localStorage.setItem("username", data.usuario);
-  localStorage.setItem("userId",data.usuarioId);
-  
+  localStorage.setItem("userId", data.usuarioId);
+
   console.log(data.usuarioId);
   console.log(data.usuario);
   console.log(data.token);
-  
+
   if (response.ok) {
-  window.location.assign("postCrud.html");
+    window.location.assign("postCrud.html");
   }
-  window.alert("Usuário não existe");
+    window.alert("Usuário não existe");
 }
 
 module.exports = { fazerLogin };

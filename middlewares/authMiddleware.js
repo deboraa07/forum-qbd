@@ -7,13 +7,12 @@ const authHeader = req.headers.authorization;
     const parts = authHeader.split(' ');
 
     if(parts.length !== 2){
-        showAlert("Faça login ou cadastre-se")
-        return res.status("token mal formatado");
+      return res.status("Token mal formatado");
     }
 
     const [scheme, token] = parts;
     if(scheme !== "Bearer"){
-        return res.status(401).send("Token invalido");
+        return res.status(401).send("Token inválido");
     }
 
 
@@ -27,7 +26,3 @@ const authHeader = req.headers.authorization;
 }
 
 module.exports = auth;
-
-function showAlert(message){
-    alert(message);
-}
