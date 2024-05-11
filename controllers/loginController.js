@@ -13,10 +13,10 @@ const fazerLogin = async (req, res) => {
 
   const usuario = await Usuario.findOne({ email });
 
-  if (!usuario) return res.status(400).send({ error: "Email invalido" });
+  if (!usuario) return res.status(400).send({ error: "Email inválido" });
 
-  if (!(await bcrypt.compare(senha, usuario.senha)))
-    return res.status(400).send({ error: "Senha invalida" });
+  if (!bcrypt.compare(senha, usuario.senha))
+    return res.status(400).send({ error: "Senha inválida" });
 
   res.send({
     usuarioId: usuario.id,

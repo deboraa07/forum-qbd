@@ -241,6 +241,7 @@ window.onload = () => {
 
             
             //remoção de posts pra pesquisa
+            if(post.autorId === userId){
             const deleteButton = document.createElement("button");
             deleteButton.classList.add("delete-button");
             deleteButton.textContent = "Deletar";
@@ -313,6 +314,8 @@ window.onload = () => {
                 });
               });
               postDiv.appendChild(updateButton);
+            }
+             postsDiv.appendChild(postDiv);
             });
             
             listaVisivel = true;
