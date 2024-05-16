@@ -218,7 +218,7 @@ body{
         box-shadow: 0 0 20px #A9A9A9;
    }
 
-      #modalContainer {
+      #modalContainer, #modalCom {
         display: none;
         background-color: rgba(0, 0, 0, 0.7);
         padding: 20px;
@@ -231,13 +231,14 @@ body{
         transform: translate(-50%, -50%);
 }
 
-      #modalContainer h2{
+      #modalContainer h2, #modalCom{
       text-align: center;
       margin-bottom: 3rem;
       margin-top: 5rem;
 }
      
-      #inputAutor,#inputConteudo, #inputTitulo{
+      #inputAutor,#inputConteudo, #inputTitulo,
+      #inputAutorCom,#inputConteudoCom{
         display: flex;
         margin-top: 20px;
         width:fit-content;
@@ -252,7 +253,7 @@ body{
         margin-left: 32%;
 
       }
-      /*estiliza os botoes do modal*/
+      /*estiliza os botoes dos modais*/
      #cancelarBtn, #salvarBtn{
         width: 30%;
         height: 30px;
@@ -267,6 +268,34 @@ body{
         margin-top: 3rem;
         margin-left: 7rem;
 }
+
+    #salvarBtnCom{
+        width: 20%;
+        height: 30px;
+        padding: 5px 20px;
+        border-radius: 20px;
+        background-color: rgba(46, 123, 158, 0.4);
+        cursor:pointer;
+        outline: 0;
+        color: floralwhite;
+        font-size: 15px;
+        font-weight: 400;
+        margin-top: 3rem;
+    }
+    #cancelarBtnCom{
+      width: 20%;
+      height: 30px;
+      padding: 5px 20px;
+      border-radius: 20px;
+      background-color: rgba(46, 123, 158, 0.4);
+      cursor:pointer;
+      outline: 0;
+      color: floralwhite;
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 3rem;
+      margin-left: 1rem;
+    }
 /*controla a home inteira*/
 .home-page{
     display: flex;

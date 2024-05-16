@@ -9,6 +9,14 @@ const postSchema = new Schema({
   autor: String,
   titulo: String,
   conteudo: String,
+  comentarios: [{
+    autorId:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref:'Usuario'
+    },
+    autor: String,
+    conteudo: String
+  }]
 },{collection: 'posts'});
 
 postSchema.index({autor:'text',titulo:'text',conteudo:'text'},{default_language:'pt', weights:{autor:2,autorId:1,titulo:1, conteudo:1}});

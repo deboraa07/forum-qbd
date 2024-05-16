@@ -57,6 +57,109 @@ window.onload = () => {
             conteudoP.classList.add("conteudoP");
             postDiv.appendChild(conteudoP);
 
+            //criar comentarios//
+              deixarComentario.addEventListener("click", () => {
+              const modalCom = document.getElementById("modalCom");
+              modalCom.innerHTML = "";
+          
+              const modalComTitle = document.createElement("h2");
+              modalComTitle.textContent = "Deixe seu comentário";
+          
+              const inputAutorCom = document.createElement("input");
+              inputAutorCom.id = "inputAutorCom";
+              inputAutorCom.value = post.autor;
+          
+              const inputConteudoCom = document.createElement("textarea");
+              inputConteudoCom.id = "inputConteudoCom";
+              inputConteudoCom.placeholder = "Digite o comentário";
+          
+              const salvarBtnCom = document.createElement("button");
+              salvarBtnCom.textContent = "Enviar";
+              salvarBtnCom.id = "salvarBtnCom";
+          
+              salvarBtnCom.addEventListener("click", () => {
+                const autorCom = inputAutorCom.value;
+                const conteudoCom = inputConteudoCom.value;
+          
+                const novoComentario = {
+                  postId: post._id,
+                  autor: autorCom,
+                  conteudo: conteudoCom
+                };
+          
+                fetch("//localhost:3000/comentarios", {
+                  method: "POST",
+                  headers: {
+                        "Content-Type": "application/json",
+                 },
+                body: JSON.stringify(novoComentario),
+                          })
+                            .then((response) => response.text())
+                            .then((message) => {
+                              console.log(message); 
+                              btnListar.click();    
+                              modalCom.style.display = "none";
+                          })               
+                            .catch((error) => {
+                              console.error(error);
+                            });
+                        });
+          
+                      const cancelarBtnCom = document.createElement("button");
+                      cancelarBtnCom.textContent = "Cancelar";
+                      cancelarBtnCom.id = "cancelarBtnCom";
+          
+                      cancelarBtnCom.addEventListener("click", () => {
+                          modalCom.style.display = "none";
+                        });
+                      
+                       modalCom.appendChild(modalComTitle);
+                       modalCom.appendChild(inputAutorCom);
+                       modalCom.appendChild(inputConteudoCom);
+                       modalCom.appendChild(salvarBtnCom);
+                       modalCom.appendChild(cancelarBtnCom);
+          
+                       modalCom.style.display = "block";
+                      });
+
+
+                    //listar comentarios//
+                      verComentarios.addEventListener("click", () => {
+                      const postId = post._id;
+                      const postDiv = document.getElementById(`post-${postId}`);
+
+                      if(!postDiv){
+                        console.error("error", postId);
+                        return;
+                      }
+
+                      fetch(`//localhost:3000/comentarios/${postId}`)
+                      .then((response) => response.json())
+                      .then((comentarios) => {
+                        const comentariosDiv = postDiv.querySelector("#comentarios");
+                        comentariosDiv.innerHTML = "";
+                        comentarios.forEach((comentario) => {
+                          const comentarioDiv = document.createElement("div");
+                          comentarioDiv.classList.add("comentario");
+
+                          const autorComentario = document.createElement("p");
+                          autorComentario.textContent = comentario.autor;
+                          comentarioDiv.appendChild(autorComentario);
+              
+                          const conteudoComentario = document.createElement("p");
+                          conteudoComentario.textContent = comentario.conteudo;
+                          comentarioDiv.appendChild(conteudoComentario);
+
+                          comentariosDiv.appendChild(comentarioDiv);
+                      });
+                      postDiv.appendChild(comentariosDiv);
+                    })
+                    .catch((error) => {
+                      console.error(error);
+                    });
+                  });
+                    
+
 
             //deletar posts
             if(post.autorId === userId){
@@ -173,6 +276,7 @@ window.onload = () => {
         });
     }
   });
+
 
 
 
