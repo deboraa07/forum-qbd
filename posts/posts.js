@@ -6,6 +6,8 @@ window.onload = () => {
   const confirmaPesquisa = document.getElementById("confirmaPesquisa");
   const cancelaPesquisa = document.getElementById("cancelaPesquisa");
   const userId = localStorage.getItem("userId");
+  const usuarioAtual = localStorage.getItem("username");
+  const comentariosDiv = document.getElementById("comentarios");
   let listaVisivel = false;
 
   btnListar.addEventListener("click", () => {
@@ -57,6 +59,62 @@ window.onload = () => {
             conteudoP.classList.add("conteudoP");
             postDiv.appendChild(conteudoP);
 
+            const comentariosDiv = document.createElement("div");
+            comentariosDiv.classList.add("comentarios-container");
+            postDiv.appendChild(comentariosDiv);
+
+            postsDiv.appendChild(postDiv);
+
+            //listar comentarios//
+            verComentarios.addEventListener("click", () => {
+              fetch(`//localhost:3000/comentarios/post/${post._id}`)
+                .then((response) => response.json())
+                .then((comentarios) => {
+                  comentariosDiv.innerHTML = "";
+
+                  const esconderCom = document.createElement("button");
+                    esconderCom.textContent = "Esconder comentários";
+                    esconderCom.classList.add("esconderCom-btn");
+                    comentariosDiv.appendChild(esconderCom);
+  
+                    esconderCom.addEventListener("click", () => {
+                    comentariosDiv.style.display = "none";
+                    });
+        
+                  comentarios.forEach((comentario) => {
+                    const comentarioDiv = document.createElement("div");
+                    comentarioDiv.classList.add("comentario");
+        
+                    const logoDiv = document.createElement("div");
+                    logoDiv.classList.add("logo-container");
+                    comentarioDiv.appendChild(logoDiv);
+        
+                    const logo = document.createElement("img");
+                    logo.src = `./assets/Logo-login.svg`;
+                    logo.classList.add("logo-com");
+                    logoDiv.appendChild(logo);
+                          
+                    const autorCom = document.createElement("p");
+                    autorCom.textContent = `${comentario.autor}`;
+                    autorCom.classList.add("autorCom");
+                    comentarioDiv.appendChild(autorCom);
+        
+                    const conteudoCom = document.createElement("p");
+                    conteudoCom.textContent = `${comentario.conteudo}`;
+                    conteudoCom.classList.add("conteudoCom");
+                    comentarioDiv.appendChild(conteudoCom);
+
+                    
+                    comentariosDiv.appendChild(comentarioDiv);
+                  })
+                })
+                .catch((error) => {
+                  console.error("Erro ao carregar comentários", error);
+                });
+              });
+
+
+
             //criar comentarios//
               deixarComentario.addEventListener("click", () => {
               const modalCom = document.getElementById("modalCom");
@@ -67,7 +125,7 @@ window.onload = () => {
           
               const inputAutorCom = document.createElement("input");
               inputAutorCom.id = "inputAutorCom";
-              inputAutorCom.value = post.autor;
+              inputAutorCom.value = usuarioAtual;
           
               const inputConteudoCom = document.createElement("textarea");
               inputConteudoCom.id = "inputConteudoCom";
@@ -123,43 +181,6 @@ window.onload = () => {
                       });
 
 
-                    //listar comentarios//
-                      verComentarios.addEventListener("click", () => {
-                      const postId = post._id;
-                      const postDiv = document.getElementById(`post-${postId}`);
-
-                      if(!postDiv){
-                        console.error("error", postId);
-                        return;
-                      }
-
-                      fetch(`//localhost:3000/comentarios/${postId}`)
-                      .then((response) => response.json())
-                      .then((comentarios) => {
-                        const comentariosDiv = postDiv.querySelector("#comentarios");
-                        comentariosDiv.innerHTML = "";
-                        comentarios.forEach((comentario) => {
-                          const comentarioDiv = document.createElement("div");
-                          comentarioDiv.classList.add("comentario");
-
-                          const autorComentario = document.createElement("p");
-                          autorComentario.textContent = comentario.autor;
-                          comentarioDiv.appendChild(autorComentario);
-              
-                          const conteudoComentario = document.createElement("p");
-                          conteudoComentario.textContent = comentario.conteudo;
-                          comentarioDiv.appendChild(conteudoComentario);
-
-                          comentariosDiv.appendChild(comentarioDiv);
-                      });
-                      postDiv.appendChild(comentariosDiv);
-                    })
-                    .catch((error) => {
-                      console.error(error);
-                    });
-                  });
-                    
-
 
             //deletar posts
             if(post.autorId === userId){
@@ -185,7 +206,7 @@ window.onload = () => {
             });
             postDiv.appendChild(deleteButton);
           
-            //atualiza post
+            //atualizar posts
             const updateButton = document.createElement("button");
             updateButton.classList.add("update-button");
             updateButton.textContent = "Atualizar";
@@ -432,7 +453,7 @@ window.onload = () => {
       }
     });
   });
-  cancelaPesquisa.addEventListener("click", () => {
+    cancelaPesquisa.addEventListener("click", () => {
     confirmaPesquisa.style.display = "none";
     searchInput.style.display = "none"; 
     cancelaPesquisa.style.display = "none"; 

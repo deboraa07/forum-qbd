@@ -5,6 +5,13 @@ const listarComentarios = async (req,res) => {
      res.status(200).send(result);
      }).catch(e => res.status(400).send(e));
 }
+
+const listarComentariosPorPost = async (req,res) => {
+    const {postId} = req.params;
+    Comentario.find({postId : postId},{_id:true, __v:false}).then(result => {
+     res.status(200).send(result);
+     }).catch(e => res.status(400).send(e));
+}
  
  const buscarPorConteudo = async (req,res) =>{
     Comentario.find({$text:{$search:req.params.conteudo}},{_id:true,__v:false}).then(result => {
@@ -34,4 +41,4 @@ const deletarComentario = async (req,res) =>{
      }).catch(e => res.status(404).send('Comentario não encontrado'));
  }
 
-module.exports = {listarComentarios,salvarComentario,buscarPorConteudo,deletarComentario,atualizarComentario};
+module.exports = {listarComentarios,listarComentariosPorPost,salvarComentario,buscarPorConteudo,deletarComentario,atualizarComentario};
