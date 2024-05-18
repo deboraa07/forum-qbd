@@ -124,7 +124,6 @@ body{
     margin-right: 10rem;
     margin-left: 1rem;
     margin-top: 1rem;
-    margin-bottom: 0;
 }
 
 .deixar-comentario{
@@ -140,7 +139,6 @@ body{
 .post-container {
     margin-top: 1rem;
     background-color: rgb(171, 171, 171,40%);
-    width:fit-content;
     height:fit-content;
     border-radius: 10px;
     border:none;
@@ -181,7 +179,7 @@ body{
   min-width: 94rem;
   width: fit-content ;
   height:fit-content;
-  min-height:3rem;
+  min-height:1rem;
 }
 
   .delete-button, .update-button{
@@ -199,9 +197,8 @@ body{
   #posts{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
     justify-content: center;
-  }
+}
 
     #btnListar{
     margin-top: 10px;
@@ -269,6 +266,8 @@ body{
         margin-left: 7rem;
 }
 
+    /*estiliza comentarios*/
+
     #salvarBtnCom{
         width: 20%;
         height: 30px;
@@ -282,6 +281,7 @@ body{
         font-weight: 400;
         margin-top: 3rem;
     }
+
     #cancelarBtnCom{
       width: 20%;
       height: 30px;
@@ -295,6 +295,74 @@ body{
       font-weight: 400;
       margin-top: 3rem;
       margin-left: 1rem;
+    }
+
+    .comentarios-container{
+      min-width: 100px;
+      height:fit-content;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .comentario{
+      border: solid transparent;
+      background-color: #2d304e;
+      border-radius: 30px;
+      margin-bottom: 10px;
+    }
+
+    .esconderCom-btn{
+      width: 11%;
+      height: 20px;
+      border-radius: 20px;
+      background-color: rgba(46, 123, 158, 0.4);
+      cursor:pointer;
+      outline: 0;
+      color: floralwhite;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+    }
+
+    .autorCom{
+      width: fit-content;
+      height:fit-content;
+      color:yellow;
+      font-family: 'Inconsolata';
+      font-size: 15px;
+      margin-left: 7.5rem;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+
+    .conteudoCom{
+      font-family: 'Inconsolata';
+      font-size: 15px;
+      margin-top: 3rem;
+      margin-left: 1rem;
+      width: fit-content;
+      height:fit-content;
+    }
+
+    .logo-com{
+      width:90px;
+      margin-left: 20px;
+      position: absolute;
+      margin-top: 10px;
+    }
+
+    .noCom-txt{
+      font-style: italic;
+      color: yellow;
+      text-align: center;
+    }
+
+    .titleCom-txt{
+      font-style: italic;
+      text-decoration: underline;
+      text-align: center;
     }
 /*controla a home inteira*/
 .home-page{

@@ -61,25 +61,32 @@ window.onload = () => {
 
             const comentariosDiv = document.createElement("div");
             comentariosDiv.classList.add("comentarios-container");
+            comentariosDiv.style.display = "none";
             postDiv.appendChild(comentariosDiv);
 
             postsDiv.appendChild(postDiv);
 
             //listar comentarios//
             verComentarios.addEventListener("click", () => {
-              fetch(`//localhost:3000/comentarios/post/${post._id}`)
+              if(comentariosDiv.style.display === "block"){
+                comentariosDiv.style.display = "none";
+                verComentarios.textContent = "Ver comentários";
+              }else{
+                fetch(`//localhost:3000/comentarios/post/${post._id}`)
                 .then((response) => response.json())
                 .then((comentarios) => {
                   comentariosDiv.innerHTML = "";
+                  const titleCom = document.createElement("p");
+                  titleCom.textContent = "Comentários:";
+                  titleCom.classList.add("titleCom-txt")
+                  comentariosDiv.appendChild(titleCom);
 
-                  const esconderCom = document.createElement("button");
-                    esconderCom.textContent = "Esconder comentários";
-                    esconderCom.classList.add("esconderCom-btn");
-                    comentariosDiv.appendChild(esconderCom);
-  
-                    esconderCom.addEventListener("click", () => {
-                    comentariosDiv.style.display = "none";
-                    });
+                if(comentarios.length === 0){
+                  const semCom = document.createElement("p");
+                  semCom.textContent = "Este post ainda não possui comentários";
+                  semCom.classList.add("noCom-txt")
+                  comentariosDiv.appendChild(semCom);
+                }
         
                   comentarios.forEach((comentario) => {
                     const comentarioDiv = document.createElement("div");
@@ -103,16 +110,17 @@ window.onload = () => {
                     conteudoCom.textContent = `${comentario.conteudo}`;
                     conteudoCom.classList.add("conteudoCom");
                     comentarioDiv.appendChild(conteudoCom);
-
-                    
+     
                     comentariosDiv.appendChild(comentarioDiv);
-                  })
+                  });
+                  comentariosDiv.style.display = "block";
+                  verComentarios.textContent = "Esconder comentários";
                 })
                 .catch((error) => {
                   console.error("Erro ao carregar comentários", error);
                 });
+              }
               });
-
 
 
             //criar comentarios//
