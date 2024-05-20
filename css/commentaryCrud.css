@@ -1,0 +1,171 @@
+ /*estiliza comentarios*/
+
+ #salvarBtnCom{
+    width: 20%;
+    height: 30px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: rgba(46, 123, 158, 0.4);
+    cursor:pointer;
+    outline: 0;
+    color: floralwhite;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+#cancelarBtnCom{
+  width: 20%;
+  height: 30px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: rgba(46, 123, 158, 0.4);
+  cursor:pointer;
+  outline: 0;
+  color: floralwhite;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.comentarios-container{
+  min-width: 100px;
+  height:fit-content;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.comentario{
+  border: solid transparent;
+  background-color: #2d304e;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.esconderCom-btn{
+  width: 11%;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgba(46, 123, 158, 0.4);
+  cursor:pointer;
+  outline: 0;
+  color: floralwhite;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.autorCom{
+  width: fit-content;
+  height:fit-content;
+  color:yellow;
+  font-family: 'Inconsolata';
+  font-size: 15px;
+  margin-left: 6rem;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.conteudoCom{
+  font-family: 'Inconsolata';
+  font-size: 15px;
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+  width: fit-content;
+  height:fit-content;
+}
+
+.logo-com{
+  width:70px;
+  margin-left: 20px;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.noCom-txt{
+  font-style: italic;
+  color: yellow;
+  text-align: center;
+}
+
+.titleCom-txt{
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.delete-btnCom{
+    border-radius: 10px;
+    background-color: rgb(123, 147, 169, 47%);
+    cursor:pointer;
+    width:60px;
+    color: whitesmoke;
+    float: right;
+    margin-right: 20px;
+    margin-top: -30px;
+    font-size: 12px;
+}
+
+.update-btnCom{
+    border-radius: 10px;
+    background-color: rgb(123, 147, 169, 47%);
+    cursor:pointer;
+    width:60px;
+    color: whitesmoke;
+    float: right;
+    margin-right: 90px;
+    margin-top: -30px;
+    font-size: 12px;
+}
+
+#modalUpdateCom{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: fit-content;
+    transform: translate(-50%, -50%);
+}
+
+#modalUpdateCom h2{
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+}
+
+#inputUpAutor, #inputUpConteudo{
+    display: flex;
+    margin-top: 20px;
+    width:fit-content;
+    min-width: 300px;
+    height: fit-content;
+    padding: 5px;
+    border: 1px solid #0893BF;;
+    background-color: #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    margin-left: 32%;
+}
+
+#cancelarUpBtn, #salvarUpBtn{
+    width: 30%;
+    height: 30px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: rgba(46, 123, 158, 0.4);
+    cursor:pointer;
+    outline: 0;
+    color: floralwhite;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 3rem;
+    margin-left: 7rem;
+}

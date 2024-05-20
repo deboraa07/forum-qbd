@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../forum-qbd/css/postCrud.css">
+  <link rel="stylesheet" type="text/css" href="../forum-qbd/css/commentaryCrud.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="../forum-qbd/posts/posts.js"></script>
@@ -47,6 +48,7 @@
 
       <div id="modalContainer" class="modal-container"></div>
       <div id="modalCom" class="modal-comentarios"></div>
+      <div id = "modalUpdateCom" class = "atualizar-comentarios"></div>
       </div>
     </div>
     <script>
@@ -54,7 +56,6 @@
         localStorage.removeItem("token");
         localStorage.removeItem("username");
         localStorage.removeItem("userId");
-        localStorage.removeItem("userid");
         window.location.href = "login.html";
       }
     </script>

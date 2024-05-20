@@ -214,7 +214,8 @@ body{
   #btnListar:hover, #btnPesquisar:hover{
         box-shadow: 0 0 20px #A9A9A9;
    }
-
+   
+/*modal de atualizacao de post e de criacao de comentario/*/
       #modalContainer, #modalCom {
         display: none;
         background-color: rgba(0, 0, 0, 0.7);
@@ -233,7 +234,7 @@ body{
       margin-bottom: 3rem;
       margin-top: 5rem;
 }
-     
+/*estiliza os inputs dos modais de post e de criacao de comentario*/     
       #inputAutor,#inputConteudo, #inputTitulo,
       #inputAutorCom,#inputConteudoCom{
         display: flex;
@@ -265,105 +266,6 @@ body{
         margin-top: 3rem;
         margin-left: 7rem;
 }
-
-    /*estiliza comentarios*/
-
-    #salvarBtnCom{
-        width: 20%;
-        height: 30px;
-        padding: 5px 20px;
-        border-radius: 20px;
-        background-color: rgba(46, 123, 158, 0.4);
-        cursor:pointer;
-        outline: 0;
-        color: floralwhite;
-        font-size: 15px;
-        font-weight: 400;
-        margin-top: 3rem;
-    }
-
-    #cancelarBtnCom{
-      width: 20%;
-      height: 30px;
-      padding: 5px 20px;
-      border-radius: 20px;
-      background-color: rgba(46, 123, 158, 0.4);
-      cursor:pointer;
-      outline: 0;
-      color: floralwhite;
-      font-size: 15px;
-      font-weight: 400;
-      margin-top: 3rem;
-      margin-left: 1rem;
-    }
-
-    .comentarios-container{
-      min-width: 100px;
-      height:fit-content;
-      border-radius: 10px;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-    .comentario{
-      border: solid transparent;
-      background-color: #2d304e;
-      border-radius: 30px;
-      margin-bottom: 10px;
-    }
-
-    .esconderCom-btn{
-      width: 11%;
-      height: 20px;
-      border-radius: 20px;
-      background-color: rgba(46, 123, 158, 0.4);
-      cursor:pointer;
-      outline: 0;
-      color: floralwhite;
-      font-size: 15px;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      margin-left: 1rem;
-    }
-
-    .autorCom{
-      width: fit-content;
-      height:fit-content;
-      color:yellow;
-      font-family: 'Inconsolata';
-      font-size: 15px;
-      margin-left: 7.5rem;
-      font-style: italic;
-      margin-top: 2rem;
-    }
-
-    .conteudoCom{
-      font-family: 'Inconsolata';
-      font-size: 15px;
-      margin-top: 3rem;
-      margin-left: 1rem;
-      width: fit-content;
-      height:fit-content;
-    }
-
-    .logo-com{
-      width:90px;
-      margin-left: 20px;
-      position: absolute;
-      margin-top: 10px;
-    }
-
-    .noCom-txt{
-      font-style: italic;
-      color: yellow;
-      text-align: center;
-    }
-
-    .titleCom-txt{
-      font-style: italic;
-      text-decoration: underline;
-      text-align: center;
-    }
 /*controla a home inteira*/
 .home-page{
     display: flex;
