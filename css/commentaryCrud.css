@@ -78,6 +78,15 @@
   height:fit-content;
 }
 
+#labelUpConteudo{
+  font-size:16px;
+  color:#0893BF;
+  display: block;
+  margin-top: -40px;
+  margin-left: 40px;
+  font-family: 'HANALEI FILL';
+}
+
 .logo-com{
   width:70px;
   margin-left: 20px;
@@ -140,19 +149,17 @@
     margin-top: 5rem;
 }
 
-#inputUpAutor, #inputUpConteudo{
+#inputUpConteudo{
     display: flex;
-    margin-top: 20px;
-    width:fit-content;
+    width: fit-content;
     min-width: 300px;
     height: fit-content;
-    padding: 5px;
     border: 1px solid #0893BF;;
     background-color: #ccc;
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 15px;
-    margin-left: 32%;
+    margin-left: 31%;
 }
 
 #cancelarUpBtn, #salvarUpBtn{

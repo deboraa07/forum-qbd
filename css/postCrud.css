@@ -238,7 +238,7 @@ body{
       #inputAutor,#inputConteudo, #inputTitulo,
       #inputAutorCom,#inputConteudoCom{
         display: flex;
-        margin-top: 20px;
+        margin-top: 10px;
         width:fit-content;
         min-width: 300px;
         height: fit-content;
@@ -249,7 +249,24 @@ body{
         box-sizing: border-box;
         font-size: 15px;
         margin-left: 32%;
-
+        justify-content: center;
+      }
+      
+      #labelTitulo{
+        text-align: center;
+        font-size:18px;
+        color:#0893BF;
+        display: block;
+        margin-top: 6px;
+        font-family: 'HANALEI FILL';
+    }
+      #labelConteudo{
+        text-align: center;
+        font-size:18px;
+        color:#0893BF;
+        display: block;
+        margin-top: 6px;
+        font-family: 'HANALEI FILL';
       }
       /*estiliza os botoes dos modais*/
      #cancelarBtn, #salvarBtn{
