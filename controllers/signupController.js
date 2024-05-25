@@ -2,9 +2,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const cadastrar = document.getElementById("button-cadastrar");
   cadastrar.addEventListener("click", async (event) => {
     event.preventDefault();
-    await salvar();
+    if (formValidate()) {
+     await salvar();
+    }
   });
 });
+
+  function formValidate() {
+  let nome = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let senha = document.getElementById("password").value;
+
+  let erroNome = document.getElementById("erroNome");
+  let erroEmail = document.getElementById("erroEmail");
+  let erroSenha = document.getElementById("erroSenha");
+
+  erroNome.textContent = "";
+  erroEmail.textContent = "";
+  erroSenha.textContent = "";
+
+  let formIsOk = true;
+
+
+  if (nome.length < 3) {
+    erroNome.textContent = "O nome deve ter pelo menos 3 caracteres";
+    formIsOk = false;
+  }e
+
+  let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regexEmail.test(email)) {
+    erroEmail.textContent = "Por favor insira um email válido!";
+    formIsOk = false;
+  }
+
+  if (senha.length < 8) {
+    erroSenha.textContent = "A senha deve ter pelo menos 8 caracteres";
+    formIsOk = false;
+  }
+  return formIsOk;
+}
+
 
 async function salvar() {
   const obj = {
@@ -23,8 +60,10 @@ async function salvar() {
     body: JSON.stringify(obj),
   });
   window.alert("Usuario cadastrado com sucesso");
-
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
   document.getElementById("password").value = "";
 }
+
+
+  

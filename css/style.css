@@ -94,6 +94,11 @@ button a:-webkit-any-link{
     color:#081433;
 }
 
+.erro{
+    color:red;
+    font-size:0.9rem;
+}
+
 /*criar Post*/
 #conteudo{
     border-radius:15px;

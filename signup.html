@@ -12,10 +12,15 @@
     <div id="login">
 
         <img class="img-signup" src="./assets/imagem-cadastro.png" alt="chat">
-        <form id="form-signup">
-            <input type="text" id="name" placeholder="Nome" autocomplete="off">
-            <input type="email" id="email" placeholder="Email" autocomplete="off">
-            <input type="password" id="password" placeholder="Senha" autocomplete="off">
+        <form id="form-signup" class="form">
+            <input type="text" id="name" placeholder="Nome" required>
+            <span class="erro" id="erroNome"></span>
+
+            <input type="email" id="email"  placeholder="Email" required>
+            <span class="erro" id="erroEmail"></span>
+            
+            <input type="password"  id="password" placeholder="Senha" required>
+            <span class="erro" id="erroSenha"></span>
 
     <div class="enter">
         <p>Já tem uma conta? <a href="login.html">Faça login.</a></p>
