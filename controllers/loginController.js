@@ -49,10 +49,6 @@ async function logar() {
   localStorage.setItem("username", data.usuario);
   localStorage.setItem("userId", data.usuarioId);
 
-  console.log(data.usuarioId);
-  console.log(data.usuario);
-  console.log(data.token);
-
   if (response.ok) {
     window.location.assign("postCrud.html");
   }

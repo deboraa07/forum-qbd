@@ -15,12 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
       titulo: document.getElementById("titulo").value,
       conteudo: document.getElementById("conteudo").value,
     };
-    console.log(post);
 
     if (userId === null || token === null) {
       window.alert("Faça login ou cadastre-se para criar posts!");
-    }
-
+    }else{
     await fetch("//localhost:3000/posts", {
       method: "POST",
       mode: "cors",
@@ -34,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("titulo").value = "";
     document.getElementById("conteudo").value = "";
+    console.log(post);
     window.alert("Post criado com sucesso!");
-  }
-});
+  }}}
+);

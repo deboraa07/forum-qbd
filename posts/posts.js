@@ -7,6 +7,7 @@ window.onload = () => {
   const cancelaPesquisa = document.getElementById("cancelaPesquisa");
   const userId = localStorage.getItem("userId");
   const usuarioAtual = localStorage.getItem("username");
+  const token = localStorage.getItem("token");
   let listaVisivel = false;
 
   btnListar.addEventListener("click", () => {
@@ -239,6 +240,9 @@ window.onload = () => {
 
             //criar comentarios//
             deixarComentario.addEventListener("click", () => {
+              if (userId === null || token === null) {
+                window.alert("Faça login ou cadastre-se para enviar comentários!");
+              }else{
               const modalCom = document.getElementById("modalCom");
               modalCom.innerHTML = "";
 
@@ -266,20 +270,21 @@ window.onload = () => {
                 fetch("//localhost:3000/comentarios", {
                   method: "POST",
                   headers: {
+                    Accept: "application/json",
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
                   },
                   body: JSON.stringify(comentario),
                 })
                   .then((response) => response.text())
                   .then((message) => {
                     console.log(message);
-                    console.log(userId);
                     btnListar.click();
                     modalCom.style.display = "none";
                   })
                   .catch((error) => {
                     console.error(error);
-                  });
+              });
               });
 
               const cancelarBtnCom = document.createElement("button");
@@ -296,7 +301,7 @@ window.onload = () => {
               modalCom.appendChild(cancelarBtnCom);
 
               modalCom.style.display = "block";
-            });
+          }});
 
             //deletar posts
             if (post.autorId === userId) {
