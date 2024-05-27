@@ -59,7 +59,7 @@ async function salvar() {
     },
     body: JSON.stringify(obj),
   });
-  window.alert("Usuario cadastrado com sucesso");
+  window.alert("Usuário cadastrado com sucesso");
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
   document.getElementById("password").value = "";

@@ -15,7 +15,7 @@ const fazerLogin = async (req, res) => {
 
   if (!usuario) return res.status(400).send({ error: "Email inválido" });
 
-  if (!bcrypt.compare(senha, usuario.senha))
+  if (!(await bcrypt.compare(senha, usuario.senha)))
     return res.status(400).send({ error: "Senha inválida" });
 
   res.send({
@@ -43,16 +43,15 @@ async function logar() {
     },
     body: JSON.stringify(obj),
   });
-
-  const data = await response.json();
-  localStorage.setItem("token", data.token);
-  localStorage.setItem("username", data.usuario);
-  localStorage.setItem("userId", data.usuarioId);
-
+  
   if (response.ok) {
+    const data = await response.json();
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("username", data.usuario);
+    localStorage.setItem("userId", data.usuarioId);
     window.location.assign("postCrud.html");
   }
-    window.alert("Usuário não existe");
+    window.alert("Erro de login, verifique seu email ou senha!");
 }
 
 module.exports = { fazerLogin };
