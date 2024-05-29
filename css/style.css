@@ -1,132 +1,211 @@
 /*login and signup style*/
-body{
-    font-family:'Inter';
-    background-color: #081433;
-    color: #fff;
+body {
+  font-family: "Inter";
+  background-size: 120%;
+  background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
+  color: #fff;
 }
 
-.enter a{ 
-    text-decoration: none;
-    color: #0893BF;
+.enter a {
+  text-decoration: none;
+  color:#0893bf;
+}
+
+.enterLogin a{
+  text-decoration: none;
+  color:#0893bf;
+}
+
+.enter p {
+  margin-top: 5px;
+}
+#signup {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  flex-direction: column;
+}
+
+#signup h1 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#login h1{
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: "Courier New", Courier, monospace;
+    margin-right: 4rem;
 }
 
 #login{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  flex-direction: column;
 }
 
-#form-signup, #formLogin, #form-create{
-    flex-direction: column;
-    display:flex;
-    align-items: center;
+#create{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-direction: column;
 }
 
-#name{
-    border-radius:15px;
-    border:none;
-    width:400px;
-    height:40px;
-    padding-left:15px;
-    background-color: #273565;
-    color: white;
-    margin-bottom: 15px;
-    font-size: 20px;
+#form-signup,
+#formLogin,
+#form-create {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
-#email, #autor{
-    border-radius:15px;
-    border:none;
-    width:400px;
-    height:40px;
-    padding-left:15px;
-    background-color: #273565;
-    color: white;
-    font-size: 20px;
+#form-create h1{
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
 }
 
-#password, #titulo{
-    border-radius:15px;
-    border:none;
-    width:400px;
-    height:40px;
-    padding-left:15px;
-    background-color: #273565;
-    color: white;
-    margin-top:15px;
-    font-size: 20px;
+#name {
+  border-radius: 15px;
+  border: none;
+  width: 400px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-input::placeholder{
-    color: white;
+#emailLogin {
+  border-radius: 15px;
+  border: none;
+  width: 400px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#email {
+  border-radius: 15px;
+  border: none;
+  width: 400px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  font-size: 20px;
+}
+
+#titulo {
+  border-radius: 15px;
+  border: none;
+  width: 400px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#password {
+  border-radius: 15px;
+  border: none;
+  width: 400px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+input::placeholder {
+  color: white;
 }
 
 h1 {
-    color: #fafafa;
+  color: #fafafa;
 }
 
-.img-login{
-    width:350px;
-    margin-bottom: 10px;
-    margin-top: 80px;
+.img-login {
+  width: 300px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
-.img-signup{
-    width:300px;
-    margin-top:10px;
-    margin-bottom:10px;
+.img-signup {
+  width: 250px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
-#button-cadastrar, #button-entrar, #button-criar{
-    width: 120px;
-    height: 40px;
-    border-radius: 20px;
-    border:none;
-    background-color: #0893BF;
-    cursor: pointer;
-    color:#081433;
+#button-cadastrar,
+#button-entrar,
+#button-criar {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #0893bf;
+  cursor: pointer;
+  color: #081433;
 }
 
-button a:-webkit-any-link{
-    text-decoration: none;
-    color:#081433;
+button a:-webkit-any-link {
+  text-decoration: none;
+  color: #081433;
 }
 
-.erro{
-    color:red;
-    font-size:0.9rem;
+/*alertas de erro do form de cadastro*/
+.erroNome {
+  color: red;
+  font-size: 0.9rem;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 10px;
+}
+
+.erroEmail,
+.erroSenha {
+  margin-top: 8px;
+  color: red;
+  font-size: 0.9rem;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 10px;
 }
 
 /*criar Post*/
-#conteudo{
-    border-radius:15px;
-    border:none;
-    width:400px;
-    height:300px;
-    padding-left:15px;
-    background-color: #273565;
-    color: white;
-    margin-top:15px;
-    font-size: 20px;
+#conteudo {
+  border-radius: 15px;
+  border: none;
+  width: 400px;
+  height: 300px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  margin-top: 15px;
+  font-size: 20px;
 }
 
-.Logo-create{
-    margin-bottom: 10px;
+.Logo-create {
+  margin-bottom: 3px;
 }
 /*extra fonts*/
 .hanalei-fill-regular {
-    font-family: "Hanalei Fill", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Hanalei Fill", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  .inconsolata {
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  }
-  
+.inconsolata {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}

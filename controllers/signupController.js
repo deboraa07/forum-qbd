@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   if (nome.length < 3) {
-    erroNome.textContent = "O nome deve ter pelo menos 3 caracteres";
+    erroNome.textContent = "O nome deve ter pelo menos 3 caracteres!";
     formIsOk = false;
-  }e
+  }
 
   let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!regexEmail.test(email)) {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (senha.length < 8) {
-    erroSenha.textContent = "A senha deve ter pelo menos 8 caracteres";
+    erroSenha.textContent = "A senha deve ter pelo menos 8 caracteres!";
     formIsOk = false;
   }
   return formIsOk;

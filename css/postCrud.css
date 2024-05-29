@@ -1,6 +1,9 @@
 body{
     background-color: #081433;
+    background-size: 120%;
     color: #fff;
+    background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
+
 }
 /*home page style (postCrud)*/
 
@@ -99,7 +102,7 @@ body{
 
 .logout{
   cursor: pointer;
-  background-color: #081433;
+  background-color: transparent;
   margin-left: 90vw;
   border:none;
   color:white;
@@ -138,7 +141,7 @@ body{
 }
 .post-container {
     margin-top: 1rem;
-    background-color: rgb(171, 171, 171,40%);
+    background-color: rgba(171, 171, 171, 0.297);
     height:fit-content;
     border-radius: 10px;
     border:none;

@@ -28,7 +28,7 @@ const fazerLogin = async (req, res) => {
 async function logar() {
   const obj = {
     nome: localStorage.getItem("username"),
-    email: document.getElementById("email").value,
+    email: document.getElementById("emailLogin").value,
     senha: document.getElementById("password").value,
   };
 
