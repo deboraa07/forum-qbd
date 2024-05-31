@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     if (formValidate()) {
      await salvar();
+     await reg();
     }
   });
 });
@@ -59,10 +60,18 @@ async function salvar() {
     },
     body: JSON.stringify(obj),
   });
-  window.alert("Usuário cadastrado com sucesso");
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
   document.getElementById("password").value = "";
+}
+function reg(){
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Usuário cadastrado com sucesso",
+    showConfirmButton: false,
+    timer: 2000
+  });
 }
 
 

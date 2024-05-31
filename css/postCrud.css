@@ -14,11 +14,12 @@ body{
 }
 
 #searchInput{
-  border: solid 5px #0893BF;;
-        background-color: #ccc;
+      border: solid 5px #0893BF;;
+        background-color: transparent;
         border-radius: 20px;
         height:30px;
         width: 500px;   
+        color: white;
 }
 
 
@@ -26,10 +27,10 @@ body{
   width: 100px;
   height: 40px;
   border-radius: 20px;
-  background-color: rgb(123, 147, 169, 47%);
+  background-color: rgba(26, 68, 88, 0.4);;
   cursor: pointer;
   color: white;
-  border:solid;
+  border:solid #0893BF;
   text-align: center;
   margin-top: 10px;
 }
@@ -43,10 +44,10 @@ body{
   width: 800px;
   height: 40px;
   border-radius: 20px;
-  background-color: rgb(123, 147, 169, 47%);
+  background-color: rgba(26, 68, 88, 0.4);
   cursor: pointer;
   color: white;
-  border:solid;
+  border:solid #0893BF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +73,7 @@ body{
     width: 400px;
     height: 40px;
     border-radius: 20px;
-    background-color: rgb(123, 147, 169, 47%);
+    background-color: rgba(26, 68, 88, 0.4);
     cursor: pointer;
     color: white;
     border:solid;
@@ -81,8 +82,12 @@ body{
     align-items: center;
 }
 
-.search button:hover{
+#confirmaPesquisa:hover, #cancelaPesquisa:hover{
     box-shadow: 0 0 20px #A9A9A9;
+}
+
+search button:hover, #add:hover{
+  box-shadow: 0 0 20px #A9A9A9;
 }
 
 
@@ -98,8 +103,8 @@ body{
     margin-left: 10px;
     text-decoration: none;
     padding-left: 2px;
+    border: solid #0893BF;
 }
-
 .logout{
   cursor: pointer;
   background-color: transparent;
@@ -141,7 +146,7 @@ body{
 }
 .post-container {
     margin-top: 1rem;
-    background-color: rgba(171, 171, 171, 0.297);
+    background-color: rgba(107, 107, 107, 0.297);
     height:fit-content;
     border-radius: 10px;
     border:none;
@@ -208,10 +213,10 @@ body{
     width: 20%;
     height: 30px;
     border-radius: 20px;
-    background-color: rgb(123, 147, 169, 47%);
+    background-color: rgba(26, 68, 88, 0.4);
     cursor:pointer;
     color:white;
-    border: solid white;
+    border: solid #0893BF ;
 }
 
   #btnListar:hover, #btnPesquisar:hover{
@@ -221,7 +226,7 @@ body{
 /*modal de atualizacao de post e de criacao de comentario/*/
       #modalContainer, #modalCom {
         display: none;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
         padding: 20px;
         border-radius: 15px;
         position: absolute;
@@ -247,12 +252,13 @@ body{
         height: fit-content;
         padding: 5px;
         border: 1px solid #0893BF;;
-        background-color: #ccc;
+        background-color: transparent;
         border-radius: 5px;
         box-sizing: border-box;
         font-size: 15px;
         margin-left: 32%;
         justify-content: center;
+        color: white;
       }
       
       #labelTitulo{
@@ -275,16 +281,15 @@ body{
      #cancelarBtn, #salvarBtn{
         width: 30%;
         height: 30px;
-        padding: 5px 20px;
         border-radius: 20px;
-        background-color: rgba(46, 123, 158, 0.4);
+        background-color: rgba(26, 68, 88, 0.4);
         cursor:pointer;
-        outline: 0;
         color: floralwhite;
         font-size: 15px;
         font-weight: 400;
         margin-top: 3rem;
         margin-left: 7rem;
+        border-color: #0893BF;
 }
 /*controla a home inteira*/
 .home-page{

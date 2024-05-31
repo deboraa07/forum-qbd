@@ -51,7 +51,13 @@ async function logar() {
     localStorage.setItem("userId", data.usuarioId);
     window.location.assign("postCrud.html");
   }
-    window.alert("Erro de login, verifique seu email ou senha!");
+}
+function reg(){
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Verifique seu email e senha, tente novamente!",
+});
 }
 
 module.exports = { fazerLogin };

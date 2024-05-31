@@ -607,7 +607,7 @@ window.onload = () => {
 
                               const cancelarUpBtn =
                                 document.createElement("button");
-                              cancelarUpBtn.id = "salvarUpBtn";
+                              cancelarUpBtn.id = "cancelarUpBtn";
                               cancelarUpBtn.textContent = "Cancelar";
 
                               salvarUpBtn.addEventListener("click", () => {
