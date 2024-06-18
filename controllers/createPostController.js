@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   criar.addEventListener("click", async (event) => {
     event.preventDefault();
     await criarPost();
-    reg();
   });
 
   async function criarPost() {
@@ -18,8 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     if (userId === null || token === null) {
-      window.alert("Faça login ou cadastre-se para criar posts!");
-    } else {
+      function reg2() {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Faça login ou cadastre-se para criar posts!",
+        });
+      }
+     reg2()} else {
       await fetch("//localhost:3000/posts", {
         method: "POST",
         mode: "cors",
@@ -30,19 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify(post),
       });
+      reg();
 
       document.getElementById("titulo").value = "";
       document.getElementById("conteudo").value = "";
+      function reg() {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Post criado com sucesso!",
+          showConfirmButton: false,
+          timer: 1000
+        });
       console.log(post);
-    }
   }
-  function reg() {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Post criado com sucesso!",
-      showConfirmButton: false,
-      timer: 2000,
-    });
+  }
   }
 });

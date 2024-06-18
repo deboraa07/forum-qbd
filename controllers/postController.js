@@ -1,4 +1,5 @@
 const Post = require('../models/Post');
+const Comentario = require('../models/Comentario');
 
 const listarPosts = async (req,res) => {
     Post.find({},{_id:true, __v:false}).then(result => {
@@ -18,11 +19,16 @@ const salvarPost = async (req,res) => {
 }
 
 const deletarPost = async (req,res) =>{
-    Post.deleteOne({_id:req.params.id}).then(result => {
-         if(result.deletedCount > 0) res.status(200).send('Removido com sucesso');
-         else res.status(404).send('Post não encontrado');
-     }).catch(e => res.status(400).send(e));
- }
+    try{
+    const postId = req.params.id;
+    const result = await Post.deleteOne({_id:postId});
+         if(result.deletedCount > 0){
+          await Comentario.deleteMany({postId:postId});
+          res.status(200).send('Removido com sucesso');
+         }
+         else{res.status(404).send('Post não encontrado');}
+     }catch(e){res.status(400).send(e);}
+ };
  
  const atualizarPost = async (req,res) =>{
      await Post.findById(req.params.id).then(result =>{
