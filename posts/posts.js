@@ -66,8 +66,8 @@ window.onload = () => {
 
             postsDiv.appendChild(postDiv);
 
-            //listar comentarios//
-            verComentarios.addEventListener("click", () => {
+             //listar comentarios//
+                         verComentarios.addEventListener("click", () => {
               if (comentariosDiv.style.display === "block") {
                 comentariosDiv.style.display = "none";
                 verComentarios.textContent = "Ver comentários";
@@ -126,7 +126,7 @@ window.onload = () => {
                         updateComButton.textContent = "Atualizar";
 
                         comentariosDiv.appendChild(comentarioDiv);
-
+                      
                         //deletar comentario//
                         deleteButtonCom.addEventListener("click", () => {
                           fetch(
@@ -241,67 +241,74 @@ window.onload = () => {
             //criar comentarios//
             deixarComentario.addEventListener("click", () => {
               if (userId === null || token === null) {
-                window.alert("Faça login ou cadastre-se para enviar comentários!");
-              }else{
-              const modalCom = document.getElementById("modalCom");
-              modalCom.innerHTML = "";
+                  function reg(){
+                    Swal.fire({
+                      icon: "error",
+                      title: "Oops...",
+                      text: "Faça login ou cadastre-se para comentar!",
+                  });
+                  }
+                  reg();
+              } else {
+                const modalCom = document.getElementById("modalCom");
+                modalCom.innerHTML = "";
 
-              const modalComTitle = document.createElement("h2");
-              modalComTitle.textContent = "Deixe seu comentário";
+                const modalComTitle = document.createElement("h2");
+                modalComTitle.textContent = "Deixe seu comentário";
 
-              const inputConteudoCom = document.createElement("textarea");
-              inputConteudoCom.id = "inputConteudoCom";
-              inputConteudoCom.placeholder = "Digite o comentário";
+                const inputConteudoCom = document.createElement("textarea");
+                inputConteudoCom.id = "inputConteudoCom";
+                inputConteudoCom.placeholder = "Digite o comentário";
 
-              const salvarBtnCom = document.createElement("button");
-              salvarBtnCom.textContent = "Enviar";
-              salvarBtnCom.id = "salvarBtnCom";
+                const salvarBtnCom = document.createElement("button");
+                salvarBtnCom.textContent = "Enviar";
+                salvarBtnCom.id = "salvarBtnCom";
 
-              salvarBtnCom.addEventListener("click", () => {
-                const conteudoCom = inputConteudoCom.value;
+                salvarBtnCom.addEventListener("click", () => {
+                  const conteudoCom = inputConteudoCom.value;
 
-                const comentario = {
-                  postId: post._id,
-                  autorId: userId,
-                  autor: usuarioAtual,
-                  conteudo: conteudoCom,
-                };
+                  const comentario = {
+                    postId: post._id,
+                    autorId: userId,
+                    autor: usuarioAtual,
+                    conteudo: conteudoCom,
+                  };
 
-                fetch("//localhost:3000/comentarios", {
-                  method: "POST",
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                  },
-                  body: JSON.stringify(comentario),
-                })
-                  .then((response) => response.text())
-                  .then((message) => {
-                    console.log(message);
-                    btnListar.click();
-                    modalCom.style.display = "none";
+                  fetch("//localhost:3000/comentarios", {
+                    method: "POST",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify(comentario),
                   })
-                  .catch((error) => {
-                    console.error(error);
-              });
-              });
+                    .then((response) => response.text())
+                    .then((message) => {
+                      console.log(message);
+                      btnListar.click();
+                      modalCom.style.display = "none";
+                    })
+                    .catch((error) => {
+                      console.error(error);
+                    });
+                });
 
-              const cancelarBtnCom = document.createElement("button");
-              cancelarBtnCom.textContent = "Cancelar";
-              cancelarBtnCom.id = "cancelarBtnCom";
+                const cancelarBtnCom = document.createElement("button");
+                cancelarBtnCom.textContent = "Cancelar";
+                cancelarBtnCom.id = "cancelarBtnCom";
 
-              cancelarBtnCom.addEventListener("click", () => {
-                modalCom.style.display = "none";
-              });
+                cancelarBtnCom.addEventListener("click", () => {
+                  modalCom.style.display = "none";
+                });
 
-              modalCom.appendChild(modalComTitle);
-              modalCom.appendChild(inputConteudoCom);
-              modalCom.appendChild(salvarBtnCom);
-              modalCom.appendChild(cancelarBtnCom);
+                modalCom.appendChild(modalComTitle);
+                modalCom.appendChild(inputConteudoCom);
+                modalCom.appendChild(salvarBtnCom);
+                modalCom.appendChild(cancelarBtnCom);
 
-              modalCom.style.display = "block";
-          }});
+                modalCom.style.display = "block";
+              }});
 
             //deletar posts
             if (post.autorId === userId) {
@@ -421,7 +428,7 @@ window.onload = () => {
           console.error(error);
         });
     }
-  });
+  }); 
 
   //pesquisa de posts
   confirmaPesquisa.style.display = "none";
@@ -490,8 +497,24 @@ window.onload = () => {
                 searchInput.style.display = "none";
                 cancelaPesquisa.style.display = "none";
                 confirmaPesquisa.style.display = "none";
+              })
+            }
+          })
+        }
+      });
+    });
+              cancelaPesquisa.addEventListener("click", () => {
+                confirmaPesquisa.style.display = "none";
+                searchInput.style.display = "none";
+                cancelaPesquisa.style.display = "none";
+              });
 
-                //listar comentarios//
+            }
+
+
+                /*
+              
+                              //listar comentarios//
                 verComentarios.addEventListener("click", () => {
                   if (comentariosDiv.style.display === "block") {
                     comentariosDiv.style.display = "none";
@@ -546,7 +569,7 @@ window.onload = () => {
                             comentarioDiv.appendChild(deleteButtonCom);
 
                             const updateComButton =
-                              document.createElement("button");
+                            document.createElement("button");
                             updateComButton.classList.add("update-btnCom");
                             updateComButton.textContent = "Atualizar";
 
@@ -666,66 +689,77 @@ window.onload = () => {
                   }
                 });
 
-                //criar comentarios//
-                deixarComentario.addEventListener("click", () => {
-                  const modalCom = document.getElementById("modalCom");
-                  modalCom.innerHTML = "";
-
-                  const modalComTitle = document.createElement("h2");
-                  modalComTitle.textContent = "Deixe seu comentário";
-
-                  const inputConteudoCom = document.createElement("textarea");
-                  inputConteudoCom.id = "inputConteudoCom";
-                  inputConteudoCom.placeholder = "Digite o comentário";
-
-                  const salvarBtnCom = document.createElement("button");
-                  salvarBtnCom.textContent = "Enviar";
-                  salvarBtnCom.id = "salvarBtnCom";
-
-                  salvarBtnCom.addEventListener("click", () => {
-                    const conteudoCom = inputConteudoCom.value;
-
-                    const comentario = {
-                      postId: post._id,
-                      autorId: userId,
-                      autor: usuarioAtual,
-                      conteudo: conteudoCom,
-                    };
-
-                    fetch("//localhost:3000/comentarios", {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify(comentario),
-                    })
-                      .then((response) => response.text())
-                      .then((message) => {
-                        console.log(message);
-                        console.log(userId);
-                        btnListar.click();
-                        modalCom.style.display = "none";
-                      })
-                      .catch((error) => {
-                        console.error(error);
-                      });
-                  });
-
-                  const cancelarBtnCom = document.createElement("button");
-                  cancelarBtnCom.textContent = "Cancelar";
-                  cancelarBtnCom.id = "cancelarBtnCom";
-
-                  cancelarBtnCom.addEventListener("click", () => {
-                    modalCom.style.display = "none";
-                  });
-
-                  modalCom.appendChild(modalComTitle);
-                  modalCom.appendChild(inputConteudoCom);
-                  modalCom.appendChild(salvarBtnCom);
-                  modalCom.appendChild(cancelarBtnCom);
-
-                  modalCom.style.display = "block";
+              //criar comentarios//
+            deixarComentario.addEventListener("click", () => {
+              if (userId === null || token === null) {
+                function reg(){
+                  Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Faça login ou cadastre-se para comentar!",
                 });
+                }
+                reg();
+              }else{
+              const modalCom = document.getElementById("modalCom");
+              modalCom.innerHTML = "";
+
+              const modalComTitle = document.createElement("h2");
+              modalComTitle.textContent = "Deixe seu comentário";
+
+              const inputConteudoCom = document.createElement("textarea");
+              inputConteudoCom.id = "inputConteudoCom";
+              inputConteudoCom.placeholder = "Digite o comentário";
+
+              const salvarBtnCom = document.createElement("button");
+              salvarBtnCom.textContent = "Enviar";
+              salvarBtnCom.id = "salvarBtnCom";
+
+              salvarBtnCom.addEventListener("click", () => {
+                const conteudoCom = inputConteudoCom.value;
+
+                const comentario = {
+                  postId: post._id,
+                  autorId: userId,
+                  autor: usuarioAtual,
+                  conteudo: conteudoCom,
+                };
+
+                fetch("//localhost:3000/comentarios", {
+                  method: "POST",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                  },
+                  body: JSON.stringify(comentario),
+                })
+                  .then((response) => response.text())
+                  .then((message) => {
+                    console.log(message);
+                    btnListar.click();
+                    modalCom.style.display = "none";
+                  })
+                  .catch((error) => {
+                    console.error(error);
+              });
+              });
+
+              const cancelarBtnCom = document.createElement("button");
+              cancelarBtnCom.textContent = "Cancelar";
+              cancelarBtnCom.id = "cancelarBtnCom";
+
+              cancelarBtnCom.addEventListener("click", () => {
+                modalCom.style.display = "none";
+              });
+
+              modalCom.appendChild(modalComTitle);
+              modalCom.appendChild(inputConteudoCom);
+              modalCom.appendChild(salvarBtnCom);
+              modalCom.appendChild(cancelarBtnCom);
+
+              modalCom.style.display = "block";
+          });
 
                 //remoção de posts pra pesquisa
                 if (post.autorId === userId) {
@@ -844,9 +878,4 @@ window.onload = () => {
       }
     });
   });
-  cancelaPesquisa.addEventListener("click", () => {
-    confirmaPesquisa.style.display = "none";
-    searchInput.style.display = "none";
-    cancelaPesquisa.style.display = "none";
-  });
-};
+};*/
