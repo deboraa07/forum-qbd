@@ -9,7 +9,6 @@ window.onload = () => {
   const usuarioAtual = localStorage.getItem("username");
   const token = localStorage.getItem("token");
   let listaVisivel = false;
-
   btnListar.addEventListener("click", () => {
     if (listaVisivel) {
       postsDiv.innerHTML = "";
@@ -20,11 +19,10 @@ window.onload = () => {
         .then((response) => response.json())
         .then((posts) => {
           postsDiv.innerHTML = "";
-
           posts.forEach((post) => {
             const postDiv = document.createElement("div");
             postDiv.classList.add("post-container");
-
+            
             const logoDiv = document.createElement("div");
             logoDiv.classList.add("logo-container");
             postDiv.appendChild(logoDiv);
@@ -33,7 +31,6 @@ window.onload = () => {
             logo.src = `./assets/Logo-login.svg`;
             logo.classList.add("logo");
             logoDiv.appendChild(logo);
-
             const deixarComentario = document.createElement("button");
             deixarComentario.classList.add("deixar-comentario");
             deixarComentario.textContent = "Deixar comentário";
@@ -63,11 +60,9 @@ window.onload = () => {
             comentariosDiv.classList.add("comentarios-container");
             comentariosDiv.style.display = "none";
             postDiv.appendChild(comentariosDiv);
-
             postsDiv.appendChild(postDiv);
-
-             //listar comentarios//
-                         verComentarios.addEventListener("click", () => {
+            //listar comentarios//
+            verComentarios.addEventListener("click", () => {
               if (comentariosDiv.style.display === "block") {
                 comentariosDiv.style.display = "none";
                 verComentarios.textContent = "Ver comentários";
@@ -76,12 +71,10 @@ window.onload = () => {
                   .then((response) => response.json())
                   .then((comentarios) => {
                     comentariosDiv.innerHTML = "";
-
                     const titleCom = document.createElement("p");
                     titleCom.textContent = "Comentários:";
                     titleCom.classList.add("titleCom-txt");
                     comentariosDiv.appendChild(titleCom);
-
                     if (comentarios.length === 0) {
                       const semCom = document.createElement("p");
                       semCom.textContent =
@@ -89,11 +82,9 @@ window.onload = () => {
                       semCom.classList.add("noCom-txt");
                       comentariosDiv.appendChild(semCom);
                     }
-
                     comentarios.forEach((comentario) => {
                       const comentarioDiv = document.createElement("div");
                       comentarioDiv.classList.add("comentario");
-
                       const logoDiv = document.createElement("div");
                       logoDiv.classList.add("logo-container");
                       comentarioDiv.appendChild(logoDiv);
@@ -124,9 +115,7 @@ window.onload = () => {
                           document.createElement("button");
                         updateComButton.classList.add("update-btnCom");
                         updateComButton.textContent = "Atualizar";
-
                         comentariosDiv.appendChild(comentarioDiv);
-                      
                         //deletar comentario//
                         deleteButtonCom.addEventListener("click", () => {
                           fetch(
@@ -149,7 +138,6 @@ window.onload = () => {
                             });
                         });
                         comentarioDiv.appendChild(deleteButtonCom);
-
                         //atualizar comentario//
                         updateComButton.addEventListener("click", () => {
                           const modalUpdateCom =
@@ -166,7 +154,7 @@ window.onload = () => {
                           labelUpConteudo.textContent =
                             "Conteúdo do comentário:";
 
-                          const inputUpConteudo =
+                           const inputUpConteudo =
                             document.createElement("textarea");
                           inputUpConteudo.id = "inputUpConteudo";
                           inputUpConteudo.value = comentario.conteudo;
@@ -184,14 +172,12 @@ window.onload = () => {
 
                           salvarUpBtn.addEventListener("click", () => {
                             const novoConteudo = inputUpConteudo.value;
-
                             const dadosAtualizados = {
                               conteudo:
                                 novoConteudo !== ""
                                   ? novoConteudo
                                   : comentario.conteudo,
                             };
-
                             fetch(
                               `//localhost:3000/comentarios/${comentario._id}`,
                               {
@@ -212,17 +198,14 @@ window.onload = () => {
                                 console.error(error);
                               });
                           });
-
                           cancelarUpBtn.addEventListener("click", () => {
                             modalUpdateCom.style.display = "none";
                           });
-
                           modalUpdateCom.appendChild(modalUpdateTitle);
                           modalUpdateCom.appendChild(inputUpConteudo);
                           modalUpdateCom.appendChild(labelUpConteudo);
                           modalUpdateCom.appendChild(salvarUpBtn);
                           modalUpdateCom.appendChild(cancelarUpBtn);
-
                           modalUpdateCom.style.display = "block";
                         });
                         comentarioDiv.appendChild(updateComButton);
@@ -237,22 +220,20 @@ window.onload = () => {
                   });
               }
             });
-
             //criar comentarios//
             deixarComentario.addEventListener("click", () => {
               if (userId === null || token === null) {
-                  function reg(){
-                    Swal.fire({
-                      icon: "error",
-                      title: "Oops...",
-                      text: "Faça login ou cadastre-se para comentar!",
+                function reg() {
+                  Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Faça login ou cadastre-se para comentar!",
                   });
-                  }
-                  reg();
+                }
+                reg();
               } else {
                 const modalCom = document.getElementById("modalCom");
                 modalCom.innerHTML = "";
-
                 const modalComTitle = document.createElement("h2");
                 modalComTitle.textContent = "Deixe seu comentário";
 
@@ -263,17 +244,14 @@ window.onload = () => {
                 const salvarBtnCom = document.createElement("button");
                 salvarBtnCom.textContent = "Enviar";
                 salvarBtnCom.id = "salvarBtnCom";
-
                 salvarBtnCom.addEventListener("click", () => {
                   const conteudoCom = inputConteudoCom.value;
-
                   const comentario = {
                     postId: post._id,
                     autorId: userId,
                     autor: usuarioAtual,
                     conteudo: conteudoCom,
                   };
-
                   fetch("//localhost:3000/comentarios", {
                     method: "POST",
                     headers: {
@@ -293,23 +271,19 @@ window.onload = () => {
                       console.error(error);
                     });
                 });
-
                 const cancelarBtnCom = document.createElement("button");
                 cancelarBtnCom.textContent = "Cancelar";
                 cancelarBtnCom.id = "cancelarBtnCom";
-
                 cancelarBtnCom.addEventListener("click", () => {
                   modalCom.style.display = "none";
                 });
-
                 modalCom.appendChild(modalComTitle);
                 modalCom.appendChild(inputConteudoCom);
                 modalCom.appendChild(salvarBtnCom);
                 modalCom.appendChild(cancelarBtnCom);
-
                 modalCom.style.display = "block";
-              }});
-
+              }
+            });
             //deletar posts
             if (post.autorId === userId) {
               const deleteButton = document.createElement("button");
@@ -333,12 +307,10 @@ window.onload = () => {
                   });
               });
               postDiv.appendChild(deleteButton);
-
               //atualizar posts
               const updateButton = document.createElement("button");
               updateButton.classList.add("update-button");
               updateButton.textContent = "Atualizar";
-
               updateButton.addEventListener("click", () => {
                 const modalContainer =
                   document.getElementById("modalContainer");
@@ -374,17 +346,14 @@ window.onload = () => {
                 const cancelarBtn = document.createElement("button");
                 cancelarBtn.id = "salvarBtn";
                 cancelarBtn.textContent = "Cancelar";
-
                 salvarBtn.addEventListener("click", () => {
                   const novoTitulo = inputTitulo.value;
                   const novoConteudo = inputConteudo.value;
-
                   const dadosAtualizados = {
                     titulo: novoTitulo !== "" ? novoTitulo : post.titulo,
                     conteudo:
                       novoConteudo !== "" ? novoConteudo : post.conteudo,
                   };
-
                   fetch(`//localhost:3000/posts/${post._id}`, {
                     method: "PUT",
                     headers: {
@@ -402,11 +371,9 @@ window.onload = () => {
                       console.error(error);
                     });
                 });
-
                 cancelarBtn.addEventListener("click", () => {
                   modalContainer.style.display = "none";
                 });
-
                 modalContainer.appendChild(modalTitle);
                 modalContainer.appendChild(labelTitulo);
                 modalContainer.appendChild(inputTitulo);
@@ -414,7 +381,6 @@ window.onload = () => {
                 modalContainer.appendChild(inputConteudo);
                 modalContainer.appendChild(salvarBtn);
                 modalContainer.appendChild(cancelarBtn);
-
                 modalContainer.style.display = "block";
               });
               postDiv.appendChild(updateButton);
@@ -428,8 +394,7 @@ window.onload = () => {
           console.error(error);
         });
     }
-  }); 
-
+  });
   //pesquisa de posts
   confirmaPesquisa.style.display = "none";
   searchInput.style.display = "none";
@@ -439,7 +404,6 @@ window.onload = () => {
     searchInput.style.display = "block";
     confirmaPesquisa.style.display = "block";
     cancelaPesquisa.style.display = "block";
-
     confirmaPesquisa.addEventListener("click", () => {
       const textSearch = searchInput.value;
       if (textSearch) {
@@ -447,7 +411,6 @@ window.onload = () => {
           .then((response) => response.json())
           .then((posts) => {
             postsDiv.innerHTML = "";
-
             if (posts.length === 0) {
               const mensagemP = document.createElement("p");
               mensagemP.textContent = "Nenhum post encontrado.";
@@ -456,7 +419,6 @@ window.onload = () => {
               posts.forEach((post) => {
                 const postDiv = document.createElement("div");
                 postDiv.classList.add("post-container");
-
                 const logo = document.createElement("img");
                 logo.src = `./assets/Logo-login.svg`;
                 logo.classList.add("logo");
@@ -490,31 +452,14 @@ window.onload = () => {
                 const comentariosDiv = document.createElement("div");
                 comentariosDiv.classList.add("comentarios-container");
                 comentariosDiv.style.display = "none";
-                postDiv.appendChild(comentariosDiv);
 
+                postDiv.appendChild(comentariosDiv);
                 postsDiv.appendChild(postDiv);
 
                 searchInput.style.display = "none";
                 cancelaPesquisa.style.display = "none";
                 confirmaPesquisa.style.display = "none";
-              })
-            }
-          })
-        }
-      });
-    });
-              cancelaPesquisa.addEventListener("click", () => {
-                confirmaPesquisa.style.display = "none";
-                searchInput.style.display = "none";
-                cancelaPesquisa.style.display = "none";
-              });
-
-            }
-
-
-                /*
-              
-                              //listar comentarios//
+                //listar comentarios//
                 verComentarios.addEventListener("click", () => {
                   if (comentariosDiv.style.display === "block") {
                     comentariosDiv.style.display = "none";
@@ -524,7 +469,6 @@ window.onload = () => {
                       .then((response) => response.json())
                       .then((comentarios) => {
                         comentariosDiv.innerHTML = "";
-
                         const titleCom = document.createElement("p");
                         titleCom.textContent = "Comentários:";
                         titleCom.classList.add("titleCom-txt");
@@ -537,7 +481,6 @@ window.onload = () => {
                           semCom.classList.add("noCom-txt");
                           comentariosDiv.appendChild(semCom);
                         }
-
                         comentarios.forEach((comentario) => {
                           const comentarioDiv = document.createElement("div");
                           comentarioDiv.classList.add("comentario");
@@ -569,12 +512,10 @@ window.onload = () => {
                             comentarioDiv.appendChild(deleteButtonCom);
 
                             const updateComButton =
-                            document.createElement("button");
+                              document.createElement("button");
                             updateComButton.classList.add("update-btnCom");
                             updateComButton.textContent = "Atualizar";
-
                             comentariosDiv.appendChild(comentarioDiv);
-
                             //deletar comentario//
                             deleteButtonCom.addEventListener("click", () => {
                               fetch(
@@ -597,7 +538,6 @@ window.onload = () => {
                                 });
                             });
                             comentarioDiv.appendChild(deleteButtonCom);
-
                             //atualizar comentario//
                             updateComButton.addEventListener("click", () => {
                               const modalUpdateCom =
@@ -606,6 +546,7 @@ window.onload = () => {
 
                               const modalUpdateTitle =
                                 document.createElement("h2");
+
                               modalUpdateTitle.textContent =
                                 "Atualizar Comentário";
 
@@ -635,14 +576,12 @@ window.onload = () => {
 
                               salvarUpBtn.addEventListener("click", () => {
                                 const novoConteudo = inputUpConteudo.value;
-
                                 const dadosAtualizados = {
                                   conteudo:
                                     novoConteudo !== ""
                                       ? novoConteudo
                                       : comentario.conteudo,
                                 };
-
                                 fetch(
                                   `//localhost:3000/comentarios/${comentario._id}`,
                                   {
@@ -663,17 +602,14 @@ window.onload = () => {
                                     console.error(error);
                                   });
                               });
-
                               cancelarUpBtn.addEventListener("click", () => {
                                 modalUpdateCom.style.display = "none";
                               });
-
                               modalUpdateCom.appendChild(modalUpdateTitle);
                               modalUpdateCom.appendChild(inputUpConteudo);
                               modalUpdateCom.appendChild(labelUpConteudo);
                               modalUpdateCom.appendChild(salvarUpBtn);
                               modalUpdateCom.appendChild(cancelarUpBtn);
-
                               modalUpdateCom.style.display = "block";
                             });
                             comentarioDiv.appendChild(updateComButton);
@@ -688,79 +624,71 @@ window.onload = () => {
                       });
                   }
                 });
+                //criar comentarios//
+                deixarComentario.addEventListener("click", () => {
+                  if (userId === null || token === null) {
+                    function reg() {
+                      Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Faça login ou cadastre-se para comentar!",
+                      });
+                    }
+                    reg();
+                  } else {
+                    const modalCom = document.getElementById("modalCom");
+                    modalCom.innerHTML = "";
 
-              //criar comentarios//
-            deixarComentario.addEventListener("click", () => {
-              if (userId === null || token === null) {
-                function reg(){
-                  Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Faça login ou cadastre-se para comentar!",
+                    const modalComTitle = document.createElement("h2");
+                    modalComTitle.textContent = "Deixe seu comentário";
+
+                    const inputConteudoCom = document.createElement("textarea");
+                    inputConteudoCom.id = "inputConteudoCom";
+                    inputConteudoCom.placeholder = "Digite o comentário";
+
+                    const salvarBtnCom = document.createElement("button");
+                    salvarBtnCom.textContent = "Enviar";
+                    salvarBtnCom.id = "salvarBtnCom";
+                    salvarBtnCom.addEventListener("click", () => {
+                      const conteudoCom = inputConteudoCom.value;
+                      const comentario = {
+                        postId: post._id,
+                        autorId: userId,
+                        autor: usuarioAtual,
+                        conteudo: conteudoCom,
+                      };
+                      fetch("//localhost:3000/comentarios", {
+                        method: "POST",
+                        headers: {
+                          Accept: "application/json",
+                          "Content-Type": "application/json",
+                          Authorization: `Bearer ${token}`,
+                        },
+                        body: JSON.stringify(comentario),
+                      })
+                        .then((response) => response.text())
+                        .then((message) => {
+                          console.log(message);
+                          btnListar.click();
+                          modalCom.style.display = "none";
+                        })
+                        .catch((error) => {
+                          console.error(error);
+                        });
+                    });
+                    const cancelarBtnCom = document.createElement("button");
+                    cancelarBtnCom.textContent = "Cancelar";
+                    cancelarBtnCom.id = "cancelarBtnCom";
+                    cancelarBtnCom.addEventListener("click", () => {
+                      modalCom.style.display = "none";
+                    });
+                    modalCom.appendChild(modalComTitle);
+                    modalCom.appendChild(inputConteudoCom);
+                    modalCom.appendChild(salvarBtnCom);
+                    modalCom.appendChild(cancelarBtnCom);
+                    modalCom.style.display = "block";
+                  }
                 });
-                }
-                reg();
-              }else{
-              const modalCom = document.getElementById("modalCom");
-              modalCom.innerHTML = "";
-
-              const modalComTitle = document.createElement("h2");
-              modalComTitle.textContent = "Deixe seu comentário";
-
-              const inputConteudoCom = document.createElement("textarea");
-              inputConteudoCom.id = "inputConteudoCom";
-              inputConteudoCom.placeholder = "Digite o comentário";
-
-              const salvarBtnCom = document.createElement("button");
-              salvarBtnCom.textContent = "Enviar";
-              salvarBtnCom.id = "salvarBtnCom";
-
-              salvarBtnCom.addEventListener("click", () => {
-                const conteudoCom = inputConteudoCom.value;
-
-                const comentario = {
-                  postId: post._id,
-                  autorId: userId,
-                  autor: usuarioAtual,
-                  conteudo: conteudoCom,
-                };
-
-                fetch("//localhost:3000/comentarios", {
-                  method: "POST",
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                  },
-                  body: JSON.stringify(comentario),
-                })
-                  .then((response) => response.text())
-                  .then((message) => {
-                    console.log(message);
-                    btnListar.click();
-                    modalCom.style.display = "none";
-                  })
-                  .catch((error) => {
-                    console.error(error);
-              });
-              });
-
-              const cancelarBtnCom = document.createElement("button");
-              cancelarBtnCom.textContent = "Cancelar";
-              cancelarBtnCom.id = "cancelarBtnCom";
-
-              cancelarBtnCom.addEventListener("click", () => {
-                modalCom.style.display = "none";
-              });
-
-              modalCom.appendChild(modalComTitle);
-              modalCom.appendChild(inputConteudoCom);
-              modalCom.appendChild(salvarBtnCom);
-              modalCom.appendChild(cancelarBtnCom);
-
-              modalCom.style.display = "block";
-          });
-
                 //remoção de posts pra pesquisa
                 if (post.autorId === userId) {
                   const deleteButton = document.createElement("button");
@@ -779,14 +707,11 @@ window.onload = () => {
                         console.error(error);
                       });
                   });
-
                   postDiv.appendChild(deleteButton);
-
                   //atualização de posts para pesquisa
                   const updateButton = document.createElement("button");
                   updateButton.classList.add("update-button");
                   updateButton.textContent = "Atualizar";
-
                   updateButton.addEventListener("click", () => {
                     const modalContainer =
                       document.getElementById("modalContainer");
@@ -818,7 +743,6 @@ window.onload = () => {
                     const salvarBtn = document.createElement("button");
                     salvarBtn.id = "salvarBtn";
                     salvarBtn.textContent = "Salvar";
-
                     const cancelarBtn = document.createElement("button");
                     cancelarBtn.id = "salvarBtn";
                     cancelarBtn.textContent = "Cancelar";
@@ -826,13 +750,11 @@ window.onload = () => {
                     salvarBtn.addEventListener("click", () => {
                       const novoTitulo = inputTitulo.value;
                       const novoConteudo = inputConteudo.value;
-
                       const dadosAtualizados = {
                         titulo: novoTitulo !== "" ? novoTitulo : post.titulo,
                         conteudo:
                           novoConteudo !== "" ? novoConteudo : post.conteudo,
                       };
-
                       fetch(`//localhost:3000/posts/${post._id}`, {
                         method: "PUT",
                         headers: {
@@ -860,14 +782,12 @@ window.onload = () => {
                     modalContainer.appendChild(inputConteudo);
                     modalContainer.appendChild(salvarBtn);
                     modalContainer.appendChild(cancelarBtn);
-
                     modalContainer.style.display = "block";
                   });
                   postDiv.appendChild(updateButton);
                 }
                 postsDiv.appendChild(postDiv);
               });
-
               listaVisivel = true;
             }
           })
@@ -878,4 +798,9 @@ window.onload = () => {
       }
     });
   });
-};*/
+  cancelaPesquisa.addEventListener("click", () => {
+    confirmaPesquisa.style.display = "none";
+    searchInput.style.display = "none";
+    cancelaPesquisa.style.display = "none";
+  });
+};
