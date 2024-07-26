@@ -163,9 +163,9 @@
                         },
                         body: JSON.stringify(dadosAtualizados),
                       })
-                      .then((response) => response.text())
-                      .then((message) => {
-                        console.log(message);
+                      .then((response) => response.json())
+                      .then((dadosAtualizados) => {
+                        console.log(dadosAtualizados);
                         btnListar.click();
                         modalContainer.style.display = "none";
                         })
@@ -301,6 +301,7 @@
                     conteudoCom.textContent = `${comentario.conteudo}`;
                     conteudoCom.classList.add("conteudoCom");
                     comentarioDiv.appendChild(conteudoCom);
+                    comentariosDiv.appendChild(comentarioDiv);
 
                     if (comentario.autorId === userId) {
                       const deleteButtonCom =
@@ -321,7 +322,6 @@
                       deleteButtonCom.addEventListener("click", () => {
                         deletarComentario(comentario);
                       })
-                    comentariosDiv.appendChild(comentarioDiv);
               }
             });
             comentariosDiv.style.display = "block";
@@ -424,15 +424,13 @@
               console.error(error);
             });
         };
-        comentarioDiv.appendChild(deleteButtonCom);
-      }
-                 
-  //pesquisa de posts
- /*  confirmaPesquisa.style.display = "none";
-  searchInput.style.display = "none";
-  cancelaPesquisa.style.display = "none";
 
-  btnPesquisar.addEventListener("click", () => {
+        //pesquisa de posts
+        confirmaPesquisa.style.display = "none";
+        searchInput.style.display = "none";
+        cancelaPesquisa.style.display = "none";
+
+    btnPesquisar.addEventListener("click", () => {
     searchInput.style.display = "block";
     confirmaPesquisa.style.display = "block";
     cancelaPesquisa.style.display = "block";
@@ -445,9 +443,10 @@
           .then((posts) => {
             postsDiv.innerHTML = "";
             if (posts.length === 0) {
-              const mensagemP = document.createElement("p");
-              mensagemP.textContent = "Nenhum post encontrado.";
-              postsDiv.appendChild(mensagemP);
+              const mensagemSemPost = document.createElement("p");
+              mensagemSemPost.textContent = "Nenhum post encontrado.";
+              mensagemSemPost.classList.add("mensagemSemPost")
+              postsDiv.appendChild(mensagemSemPost);
 
             } else {
               posts.forEach((post) => {
@@ -493,12 +492,17 @@
 
                 searchInput.style.display = "none";
                 cancelaPesquisa.style.display = "none";
-                confirmaPesquisa.style.display = "none";              
-              })}})}})})})} 
-  cancelaPesquisa.addEventListener("click", () => {
-    confirmaPesquisa.style.display = "none";
-    searchInput.style.display = "none";
-    cancelaPesquisa.style.display = "none";
-  });
-};
- */
+                confirmaPesquisa.style.display = "none";
+
+                deletarPosts(post, userId, postDiv, btnListar);
+                atualizarPosts(post, postDiv, btnListar, userId);  
+                criarComentarios(post, userId, token, usuarioAtual, deixarComentario);  
+                listarComentarios(post, userId, verComentarios, comentariosDiv);   
+
+              })}})}})})
+                cancelaPesquisa.addEventListener("click", () => {
+                confirmaPesquisa.style.display = "none";
+                searchInput.style.display = "none";
+                cancelaPesquisa.style.display = "none";
+              });
+      }

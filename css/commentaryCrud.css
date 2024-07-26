@@ -92,7 +92,7 @@
   margin-top: 20px;
 }
 
-.noCom-txt{
+.noCom-txt, .mensagemSemPost{
   font-style: italic;
   color: yellow;
   text-align: center;
