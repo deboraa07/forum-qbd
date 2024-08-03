@@ -19,6 +19,7 @@ body {
 .enter p {
   margin-top: 5px;
 }
+
 #signup {
   text-align: center;
   justify-content: center;
@@ -101,7 +102,7 @@ body {
   color: white;
   font-size: 20px;
 }
-
+/*criar Post*/
 #titulo {
   border-radius: 15px;
   border: none;
@@ -196,6 +197,7 @@ button a:-webkit-any-link {
 .Logo-create {
   margin-bottom: 3px;
 }
+
 /*extra fonts*/
 .hanalei-fill-regular {
   font-family: "Hanalei Fill", system-ui;
@@ -209,3 +211,140 @@ button a:-webkit-any-link {
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+
+@media (max-width:480px){
+
+  body {
+    font-family: "Inter";
+    background-size: 400%;
+    background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
+    color: #fff;
+  }
+
+  #signup h1 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+  }
+
+  .img-signup {
+    width: 180px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  #name {
+    border-radius: 15px;
+    border: none;
+    width: 280px;
+    height: 25px;
+    padding-left: 15px;
+    background-color: #273565;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  #email {
+    border-radius: 15px;
+    border: none;
+    width: 280px;
+    height: 25px;
+    padding-left: 15px;
+    background-color: #273565;
+    color: white;
+    font-size: 15px;
+  }
+
+  #password {
+    border-radius: 15px;
+    border: none;
+    width: 280px;
+    height: 25px;
+    padding-left: 15px;
+    background-color: #273565;
+    color: white;
+    font-size: 15px;
+  }
+
+  .enter p {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+
+  #button-cadastrar, #button-entrar, #button-criar{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #0893bf;
+    cursor: pointer;
+    color: #081433;
+    }
+
+
+  #login h1{
+    font-family: "Courier New", Courier, monospace;
+    margin-right: 4rem;
+    font-size: 20px;
+    margin-left: 3rem;
+}
+
+.img-login {
+  width: 180px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+#emailLogin {
+  border-radius: 15px;
+  border: none;
+  width: 280px;
+  height: 25px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.enterLogin a{
+  text-decoration: none;
+  color:#0893bf;
+  font-size: 13px;
+}
+
+.enterLogin p{
+  font-size: 13px;
+}
+#form-create h1{
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+}
+.Logo-create {
+  margin-bottom: 3px;
+  width: 150px;
+}
+#titulo {
+  border-radius: 15px;
+  border: none;
+  width: 280px;
+  height: 20px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+#conteudo {
+  border-radius: 15px;
+  border: none;
+  width: 280px;
+  height: 100px;
+  padding-left: 15px;
+  background-color: #273565;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+}
+

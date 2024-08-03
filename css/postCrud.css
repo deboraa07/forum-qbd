@@ -3,7 +3,6 @@ body{
     background-size: 120%;
     color: #fff;
     background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
-
 }
 /*home page style (postCrud)*/
 
@@ -96,7 +95,7 @@ search button:hover, #add:hover{
   color:white;
   width:70px;
 }
-
+/*texto do botao add*/
 #add{
     width:120px;
     height:40px;
@@ -235,6 +234,7 @@ search button:hover, #add:hover{
         width: 800px;
         height: fit-content;
         transform: translate(-50%, -50%);
+        border:solid #089;
 }
 
       #modalContainer h2, #modalCom{
@@ -245,10 +245,11 @@ search button:hover, #add:hover{
 /*estiliza os inputs dos modais de post e de criacao de comentario*/     
       #inputAutor,#inputConteudo, #inputTitulo,
       #inputAutorCom,#inputConteudoCom{
+        align-items: center;
         display: flex;
         margin-top: 10px;
-        width:fit-content;
-        min-width: 300px;
+        min-width: 800px;
+        width: fit-content;
         height: fit-content;
         padding: 5px;
         border: 1px solid #0893BF;;
@@ -256,8 +257,6 @@ search button:hover, #add:hover{
         border-radius: 5px;
         box-sizing: border-box;
         font-size: 15px;
-        margin-left: 32%;
-        justify-content: center;
         color: white;
       }
       
@@ -296,5 +295,247 @@ search button:hover, #add:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+
+@media (max-width:480px){
+  body{
+    background-color: #081433;
+    background-size: 400%;
+    color: #fff;
+    background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
+}
+#btnPesquisar{
+  margin-top:10px;  
+  width: 180px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgba(26, 68, 88, 0.4);
+  cursor: pointer;
+  color: white;
+  border:solid #0893BF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#btnPesquisar p{
+  padding-left: 1rem;
+  font-size: smaller;
+}
+#searchInput{
+    border: solid 5px #0893BF;;
+    background-color: transparent;
+    border-radius: 20px;
+    height:30px;
+    width: 260px;   
+    color: white;
+}
+ #btnAdd{
+  text-decoration: none;
+  color:white;
+  width:100px;
+  height: 10px;
+}
+.img-add{
+  width:20px;
+}
+
+#add{
+  width:130px;
+  height:30px;
+  margin-left: 15px;
+  text-decoration: none;
+  border: solid #0893BF;
+  font-size: 12px;
+}
+
+#btnListar{
+  margin-top: 10px;
+  width: 30%;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgba(26, 68, 88, 0.4);
+  cursor:pointer;
+  color:white;
+  border: solid #0893BF ;
+  font-size: 12px;
+}
+
+.logout{
+  cursor: pointer;
+  background-color: transparent;
+  margin-left: 80vw;
+  border:none;
+  color:white;
+  display:flex;
+}
+.logout img{
+  width:20px;
+}
+.logout p{
+  font-size: 10px;
+}
+.ver-comentarios{
+  border:none;
+  width:70px;
+  height: 12px;
+  font-family: 'HANALEI FILL';
+  color:#9DB3EB;
+  background-color: #081433;
+  cursor: pointer;
+  margin-left: 12rem;
+  font-size: 7px; 
+  margin-top: 0rem;
+}
+.deixar-comentario{
+  border:none;
+  width:80px;
+  height: 12px;
+  font-family: 'HANALEI FILL';
+  color:#9DB3EB;
+  background-color: #081433;
+  cursor: pointer;
+  margin-left: 12rem;
+  font-size: 7px; 
+}
+.post-container {
+  margin-top: 1rem;
+  background-color: rgba(107, 107, 107, 0.297);
+  height:120px;
+  width:300px;
+  border-radius: 10px;
+}
+.logo{
+  width:50px;
+  margin-left: 10px;
+  margin-top: 20px;
+  position: absolute;
+}
+.autorP{
+  width: fit-content;
+  height:fit-content;
+  color:#FB8686;
+  font-family: 'Inconsolata';
+  font-size: 12px;
+  margin-left: 4rem;
+  font-style: italic;
+  margin-top: 0rem;
+}
+.tituloP{
+  width:fit-content;
+  height:fit-content;
+  color:#FB8686;
+  font-family: 'Inconsolata';
+  font-size: 12px;
+  margin-left: 4rem;
+  margin-top: 1;
+}
+.conteudoP{
+  font-family: 'Inconsolata';
+  font-size: 12px;
+  margin-top: -0.5rem;
+  margin-left: 4rem;
+  min-width: 94rem;
+  width: fit-content ;
+  height:fit-content;
+  min-height:1rem;
+}
+
+.delete-button, .update-button{
+  border-radius: 20px;
+  background-color: rgb(123, 147, 169, 47%);
+  cursor:pointer;
+  width:60px;
+  height: 20px;
+  float:right;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  font-size:10px;
+}
+
+#confirmaPesquisa, #cancelaPesquisa{
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgba(26, 68, 88, 0.4);;
+  cursor: pointer;
+  color: white;
+  border:solid #0893BF;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#confirmaPesquisa p, #cancelaPesquisa p{
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+#modalContainer, #modalCom {
+  display: none;
+  padding: 20px;
+  border-radius: 15px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 300px;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+  border: solid #089;
+}
+
+#modalContainer h2, #modalCom{
+text-align: center;
+margin-bottom: 3rem;
+margin-top: 5rem;
+font-size: 20px;
+}
+/*estiliza os inputs dos modais de post e de criacao de comentario*/     
+#inputAutor,#inputConteudo, #inputTitulo,
+#inputAutorCom,#inputConteudoCom{
+  display: flex;
+  margin-top: 10px;
+  width:fit-content;
+  height: fit-content;
+  padding: 5px;
+  border: 1px solid #0893BF;;
+  background-color: transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: white;
+}
+
+#labelTitulo{
+  text-align: center;
+  font-size:13px;
+  color:#0893BF;
+  display: block;
+  margin-top: 6px;
+  font-family: 'HANALEI FILL';
+}
+#labelConteudo{
+  text-align: center;
+  font-size:13px;
+  color:#0893BF;
+  display: block;
+  margin-top: 6px;
+  font-family: 'HANALEI FILL';
+}
+/*estiliza os botoes dos modais*/
+#cancelarBtn, #salvarBtn{
+  width: 30%;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgba(26, 68, 88, 0.4);
+  cursor:pointer;
+  color: floralwhite;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-left: 7rem;
+  border-color: #0893BF;
+  font-size: 13px;
+}
+
 
 }
