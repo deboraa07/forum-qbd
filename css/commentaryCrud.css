@@ -50,14 +50,12 @@
   font-size: 15px;
   margin-left: 6rem;
   font-style: italic;
-  margin-top: 2rem;
 }
 
 .conteudoCom{
   font-family: 'Inconsolata';
   font-size: 15px;
-  margin-top: 2.5rem;
-  margin-left: 1rem;
+  margin-left: 6rem;
   width: fit-content;
   height:fit-content;
 }
@@ -75,7 +73,7 @@
   width:70px;
   margin-left: 20px;
   position: absolute;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .noCom-txt, .mensagemSemPost{
@@ -136,6 +134,7 @@
 
 #inputUpConteudo{
     display: flex;
+    min-width: 500px;
     width: fit-content;
     height: fit-content;
     border: 1px solid #0893BF;;
@@ -198,7 +197,8 @@
       min-width: 100px;
       height:fit-content;
       border-radius: 10px;
-      margin-left: 0;
+      margin-left: 10px;
+  margin-right: 10px;
 }
     
     .comentario{
@@ -206,8 +206,9 @@
       background-color: #050727;
       border-radius: 30px;
       margin-bottom: 10px;
-      width: 300px;
-}
+      width: 280px;
+      height: 70px;
+      }
     
     .autorCom{
       width: 200px;
@@ -217,6 +218,7 @@
       font-size: 13px;
       margin-left: 4.5rem;
       font-style: italic;
+      margin-top: 10px;
 }
     
     .conteudoCom{
@@ -226,7 +228,7 @@
       margin-left: 4.5rem;
       width: fit-content;
       height:fit-content;
-    }
+  }
     
     #labelUpConteudo{
       font-size:16px;
@@ -241,6 +243,7 @@
       width:50px;
       margin-left: 20px;
       position: absolute;
+      margin-top: 10px;
   }
     
      .mensagemSemPost{
@@ -268,26 +271,26 @@
         border-radius: 10px;
         background-color: rgb(123, 147, 169, 47%);
         cursor:pointer;
-        width:45px;
+        width: 60px;
         color: whitesmoke;
         float: right;
-        margin-right: 20px;
-        margin-top: -20px;
-        font-size: 10px;
+        margin-top: -10px;
+        font-size: 12px;
+        
     }
     
     .update-btnCom{
-        border-radius: 10px;
-        background-color: rgb(123, 147, 169, 47%);
-        cursor:pointer;
-        width:50px;
-        color: whitesmoke;
-        float: right;
-        margin-right: 70px;
-        margin-top: -20px;
-        font-size: 10px;
+      border-radius: 10px;
+      background-color: rgb(123, 147, 169, 47%);
+      cursor:pointer;
+      width:60px;
+      color: whitesmoke;
+      float: right;
+      margin-left: 90px;
+      margin-top: -20px;
+      font-size: 12px;
     }
-    
+    /*modal de atualizar comentarios*/
     #modalUpdateCom{
         display: none;
         background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
@@ -303,14 +306,15 @@
         align-items: center;
     }
     
-    #modalUpdateCom h2, #modalCom h2{
+    #modalUpdateCom h2{
         text-align: center;
         margin-bottom: 4rem;
         margin-top: 1rem;
         font-size: 20px;
     }
-    
+    /*input conteudo do modal de atualizar comentarios*/
     #inputUpConteudo{
+        min-width: 250px;
         width: fit-content;
         height: fit-content;
         border: 1px solid #0893BF;
@@ -321,7 +325,7 @@
         color: white;
         margin-left: 2px;
     }
-    
+    /*botoes do modal de atualizar comentario*/
     #cancelarUpBtn, #salvarUpBtn{
         width: 30%;
         height: 30px;
@@ -354,16 +358,7 @@
           font-size: 20px;
   }
 
-  #inputConteudoCom{
-    width: fit-content;
-    height: fit-content;
-    border: 1px solid #0893BF;;
-    background-color: transparent;
-    border-radius: 5px;
-    font-size: 15px;
-    color: white;
-    margin-left: -10px;
-}
+ 
 
   
     

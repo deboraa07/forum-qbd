@@ -297,7 +297,7 @@ search button:hover, #add:hover{
     align-items: center;
 
 }
-
+/*responsividade telas menores*/
 @media (max-width:480px){
   body{
     background-color: #081433;
@@ -307,8 +307,8 @@ search button:hover, #add:hover{
 }
 #btnPesquisar{
   margin-top:10px;  
-  width: 180px;
-  height: 30px;
+  width: 250px;
+  height: 40px;
   border-radius: 20px;
   background-color: rgba(26, 68, 88, 0.4);
   cursor: pointer;
@@ -320,7 +320,7 @@ search button:hover, #add:hover{
 }
 #btnPesquisar p{
   padding-left: 1rem;
-  font-size: smaller;
+  font-size: 15px;
 }
 #searchInput{
     border: solid 5px #0893BF;;
@@ -330,35 +330,38 @@ search button:hover, #add:hover{
     width: 260px;   
     color: white;
 }
+/*container do texto de add*/
  #btnAdd{
   text-decoration: none;
   color:white;
   width:100px;
-  height: 10px;
+  height: 20px;
+  margin-left: 5px;
 }
 .img-add{
   width:20px;
+  margin-left: 5px;
 }
 
 #add{
-  width:130px;
+  width:150px;
   height:30px;
-  margin-left: 15px;
   text-decoration: none;
   border: solid #0893BF;
-  font-size: 12px;
+  font-size: 15px;
+  padding-top: 2px;
 }
 
 #btnListar{
   margin-top: 10px;
-  width: 30%;
-  height: 20px;
+  width: 150px;
+  height: 30px;
   border-radius: 20px;
   background-color: rgba(26, 68, 88, 0.4);
   cursor:pointer;
   color:white;
   border: solid #0893BF ;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .logout{
@@ -377,14 +380,14 @@ search button:hover, #add:hover{
 }
 .ver-comentarios{
   border:none;
-  width:70px;
-  height: 12px;
+  width:80px;
+  height: 10px;
   font-family: 'HANALEI FILL';
   color:#9DB3EB;
   background-color: #081433;
   cursor: pointer;
   margin-left: 12rem;
-  font-size: 7px; 
+  font-size: 8px; 
   margin-top: 0rem;
 }
 .deixar-comentario{
@@ -396,13 +399,13 @@ search button:hover, #add:hover{
   background-color: #081433;
   cursor: pointer;
   margin-left: 12rem;
-  font-size: 7px; 
+  font-size: 8px; 
 }
 .post-container {
   margin-top: 1rem;
   background-color: rgba(107, 107, 107, 0.297);
-  height:120px;
-  width:300px;
+  height:fit-content;
+  width: 300px;
   border-radius: 10px;
 }
 .logo{
@@ -416,7 +419,7 @@ search button:hover, #add:hover{
   height:fit-content;
   color:#FB8686;
   font-family: 'Inconsolata';
-  font-size: 12px;
+  font-size: 15px;
   margin-left: 4rem;
   font-style: italic;
   margin-top: 0rem;
@@ -426,13 +429,13 @@ search button:hover, #add:hover{
   height:fit-content;
   color:#FB8686;
   font-family: 'Inconsolata';
-  font-size: 12px;
+  font-size: 15px;
   margin-left: 4rem;
   margin-top: 1;
 }
 .conteudoP{
   font-family: 'Inconsolata';
-  font-size: 12px;
+  font-size: 15px;
   margin-top: -0.5rem;
   margin-left: 4rem;
   min-width: 94rem;
@@ -443,7 +446,7 @@ search button:hover, #add:hover{
 
 .delete-button, .update-button{
   border-radius: 20px;
-  background-color: rgb(123, 147, 169, 47%);
+  background-color: rgba(28, 71, 111, 0.44);
   cursor:pointer;
   width:60px;
   height: 20px;
@@ -470,31 +473,50 @@ search button:hover, #add:hover{
   font-size: 12px;
 }
 
-#modalContainer, #modalCom {
+#modalContainer{
   display: none;
   padding: 20px;
   border-radius: 15px;
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
-  width: 300px;
+  width: 250px;
   height: fit-content;
   transform: translate(-50%, -50%);
   border: solid #089;
 }
 
-#modalContainer h2, #modalCom{
+
+#modalContainer h2{
 text-align: center;
 margin-bottom: 3rem;
-margin-top: 5rem;
+margin-top: 1rem;
 font-size: 20px;
 }
+
+#modalCom h2{
+  text-align: center;
+  font-size: 20px;
+  }
 /*estiliza os inputs dos modais de post e de criacao de comentario*/     
-#inputAutor,#inputConteudo, #inputTitulo,
-#inputAutorCom,#inputConteudoCom{
-  display: flex;
+#inputAutor,#inputConteudo, #inputTitulo{
   margin-top: 10px;
   width:fit-content;
+  min-width: 250px;
+  height: fit-content;
+  padding: 5px;
+  border: 1px solid #0893BF;;
+  background-color: transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: white;  
+}
+/*input do modal de add comentario*/
+#inputConteudoCom{
+  margin-top: 10px;
+  width:fit-content;
+  min-width: 250px;
   height: fit-content;
   padding: 5px;
   border: 1px solid #0893BF;;
@@ -503,6 +525,7 @@ font-size: 20px;
   box-sizing: border-box;
   font-size: 15px;
   color: white;
+  
 }
 
 #labelTitulo{
@@ -532,10 +555,9 @@ font-size: 20px;
   font-size: 15px;
   font-weight: 400;
   margin-top: 1rem;
-  margin-left: 7rem;
+  margin-left: 6rem;
   border-color: #0893BF;
   font-size: 13px;
 }
-
 
 }

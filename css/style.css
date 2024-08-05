@@ -33,8 +33,6 @@ body {
 }
 
 #login h1{
-    margin-bottom: 0;
-    margin-top: 0;
     font-family: "Courier New", Courier, monospace;
     margin-right: 4rem;
 }
@@ -43,15 +41,13 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
   flex-direction: column;
 }
-
+/*div form addPost*/
 #create{
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
   flex-direction: column;
 }
 
@@ -226,10 +222,25 @@ button a:-webkit-any-link {
     font-size: 20px;
   }
 
+  #signup {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    flex-direction: column;
+  }
+
   .img-signup {
-    width: 180px;
+    width: 130px;
     margin-top: 5px;
     margin-bottom: 15px;
+  }
+
+  #login{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   #name {
@@ -268,7 +279,7 @@ button a:-webkit-any-link {
 
   .enter p {
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 15px;
   }
 
   #button-cadastrar, #button-entrar, #button-criar{
@@ -287,12 +298,12 @@ button a:-webkit-any-link {
     margin-right: 4rem;
     font-size: 20px;
     margin-left: 3rem;
+    margin-bottom: 0;
 }
 
 .img-login {
   width: 180px;
   margin-bottom: 10px;
-  margin-top: 40px;
 }
 
 #emailLogin {
@@ -313,7 +324,7 @@ button a:-webkit-any-link {
 }
 
 .enterLogin p{
-  font-size: 13px;
+  font-size: 15px;
 }
 #form-create h1{
   font-size: 18px;
