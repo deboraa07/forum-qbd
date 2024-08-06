@@ -208,6 +208,7 @@ button a:-webkit-any-link {
   font-variation-settings: "wdth" 100;
 }
 
+/*responsividade telas pequenas*/
 @media (max-width:480px){
 
   body {
@@ -356,6 +357,71 @@ button a:-webkit-any-link {
   margin-top: 15px;
   font-size: 15px;
 }
+
+}
+
+/*responsividade telas médias*/
+@media (min-width:768px){
+  body {
+    background-size: 300%;
+  }
+
+  #signup h1 {
+    font-size: 40px;
+  }
+
+  #signup {
+    margin-top: 9rem;
+  }
+
+  .img-signup {
+    width: 300px;
+  }
+
+  #name, #email, #password {
+    width: 400px;
+    height: 25px;
+    font-size: 22px;
+  }
+
+  .enter p {
+    font-size: 25px;
+  }
+
+  #button-cadastrar, #button-entrar{
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #0893bf;
+    cursor: pointer;
+    color: #081433;
+    font-size: 22px;
+    }
+
+    #login{
+      margin-top: 8rem;
+    }
+
+    #emailLogin {
+      width: 400px;
+      height: 25px;
+      padding-left: 15px;
+      background-color: #273565;
+      color: white;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .enterLogin a{
+      text-decoration: none;
+      color:#0893bf;
+      font-size: 22px;
+    }
+    
+    .enterLogin p{
+      font-size: 22px;
+    }
 
 }
 
