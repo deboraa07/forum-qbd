@@ -327,6 +327,7 @@ button a:-webkit-any-link {
 .enterLogin p{
   font-size: 15px;
 }
+/*form adicionar post*/
 #form-create h1{
   font-size: 18px;
   font-family: "Courier New", Courier, monospace;
@@ -335,6 +336,7 @@ button a:-webkit-any-link {
   margin-bottom: 3px;
   width: 150px;
 }
+/*inputs do adicionar post*/
 #titulo {
   border-radius: 15px;
   border: none;
@@ -361,7 +363,7 @@ button a:-webkit-any-link {
 }
 
 /*responsividade telas médias*/
-@media (min-width:768px){
+@media (min-width:768px ) and (max-width:1023px){
   body {
     background-size: 300%;
   }
@@ -380,7 +382,7 @@ button a:-webkit-any-link {
 
   #name, #email, #password {
     width: 400px;
-    height: 25px;
+    height: 30px;
     font-size: 22px;
   }
 
@@ -388,7 +390,7 @@ button a:-webkit-any-link {
     font-size: 25px;
   }
 
-  #button-cadastrar, #button-entrar{
+  #button-cadastrar, #button-entrar, #button-criar{
     width: 150px;
     height: 30px;
     border-radius: 20px;
@@ -405,7 +407,7 @@ button a:-webkit-any-link {
 
     #emailLogin {
       width: 400px;
-      height: 25px;
+      height: 30px;
       padding-left: 15px;
       background-color: #273565;
       color: white;
@@ -422,6 +424,20 @@ button a:-webkit-any-link {
     .enterLogin p{
       font-size: 22px;
     }
+
+    #create{
+    margin-top: 8rem;
+    }
+
+    #form-create h1{
+      font-size: 30px;
+      font-family: "Courier New", Courier, monospace;
+    }
+    .Logo-create {
+      margin-bottom: 3px;
+      width: 200px;
+    }
+    
 
 }
 

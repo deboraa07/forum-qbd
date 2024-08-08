@@ -473,6 +473,7 @@ search button:hover, #add:hover{
   font-size: 12px;
 }
 
+/*modal de atualizar posts*/
 #modalContainer{
   display: none;
   padding: 20px;
@@ -512,21 +513,6 @@ font-size: 20px;
   font-size: 15px;
   color: white;  
 }
-/*input do modal de add comentario*/
-#inputConteudoCom{
-  margin-top: 10px;
-  width:fit-content;
-  min-width: 250px;
-  height: fit-content;
-  padding: 5px;
-  border: 1px solid #0893BF;;
-  background-color: transparent;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 15px;
-  color: white;
-  
-}
 
 #labelTitulo{
   text-align: center;
@@ -561,3 +547,181 @@ font-size: 20px;
 }
 
 }
+/*responsividade telas médias*/
+@media (min-width:768px ) and (max-width:1023px){
+  body{
+    background-size: 300%;
+  }
+
+  #add, #btnListar{
+    font-size: 16px;
+  }
+
+  .post-container {
+    margin-top: 1rem;
+    background-color: rgba(107, 107, 107, 0.297);
+    height:fit-content;
+    width: 800px;
+    border-radius: 10px;
+}
+
+  .ver-comentarios{
+    border: none;
+    width:150px;
+    height: 24px;
+    font-family: 'HANALEI FILL';
+    color:#9DB3EB;
+    background-color: #081433;
+    cursor: pointer;
+    font-size: 15px; 
+    margin-left: 25rem;
+    margin-top: -22px;
+    display: flex;
+    padding-left: 20px;
+}
+
+  .deixar-comentario{
+    border:none;
+    width:150px;
+    height: 23px;
+    margin-top: 2px;
+    font-family: 'HANALEI FILL';
+    color:#9DB3EB;
+    background-color: #081433;
+    cursor: pointer;
+    font-size: 15px; 
+    margin-right: 10px;
+  }
+
+  .logo{
+    width:65px;
+    margin-left: 10px;
+    position: absolute;
+  }
+  .autorP{
+    width: fit-content;
+    height:fit-content;
+    color:#FB8686;
+    font-family: 'Inconsolata';
+    font-size: 22px;
+    margin-left: 5rem;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+  .tituloP{
+    width:fit-content;
+    height:fit-content;
+    color:#FB8686;
+    font-family: 'Inconsolata';
+    font-size: 22px;
+    margin-left: 5rem;
+    margin-top: 1;
+  }
+  .conteudoP{
+    font-family: 'Inconsolata';
+    font-size: 22px;
+    margin-top: -0.5rem;
+    margin-left: 5rem;
+    min-width: 94rem;
+    width: fit-content ;
+    height:fit-content;
+    min-height:1rem;
+  }
+  .delete-button, .update-button{
+    border-radius: 20px;
+    background-color: rgba(28, 71, 111, 0.44);
+    cursor:pointer;
+    width:100px;
+    height: 30px;
+    float:right;
+    margin-right: 8px;
+    font-size:22px;
+  }
+
+  #confirmaPesquisa, #cancelaPesquisa{
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: rgba(26, 68, 88, 0.4);;
+    cursor: pointer;
+    color: white;
+    border:solid #0893BF;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  #confirmaPesquisa p, #cancelaPesquisa p{
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  #modalContainer{
+    display: none;
+    padding: 20px;
+    border-radius: 15px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 700px;
+    height: fit-content;
+    transform: translate(-50%, -50%);
+    border: solid #089;
+  }
+  
+  
+  #modalContainer h2{
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  font-size: 30px;
+  }
+  /*estiliza os inputs dos modais de post e de criacao de comentario*/     
+  #inputAutor,#inputConteudo, #inputTitulo{
+    margin-top: 10px;
+    width:fit-content;
+    min-width: 700px;
+    height: fit-content;
+    padding: 5px;
+    border: 1px solid #0893BF;;
+    background-color: transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: white;  
+  }
+  
+  #labelTitulo{
+    text-align: center;
+    font-size:25px;
+    color:#0893BF;
+    display: block;
+    margin-top: 6px;
+    font-family: 'HANALEI FILL';
+  }
+  #labelConteudo{
+    text-align: center;
+    font-size:25px;
+    color:#0893BF;
+    display: block;
+    margin-top: 6px;
+    font-family: 'HANALEI FILL';
+  }
+  /*estiliza os botoes dos modais*/
+  #cancelarBtn, #salvarBtn{
+    width: 30%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: rgba(26, 68, 88, 0.4);
+    cursor:pointer;
+    color: floralwhite;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-left: 6rem;
+    border-color: #0893BF;
+    font-size: 20px;
+  }
+  
+}
+
+

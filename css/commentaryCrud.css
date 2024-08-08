@@ -1,5 +1,5 @@
  /*estiliza comentarios*/
-
+/*botoes do modal de deixar comentario*/
  #salvarBtnCom{
     width: 20%;
     height: 30px;
@@ -166,6 +166,7 @@
 
 /*responsividade telas menores*/
     @media (max-width:480px){
+      /*botoes do modal de deixar comentario*/
       #salvarBtnCom{
         width: 30%;
         height: 30px;
@@ -198,7 +199,7 @@
       height:fit-content;
       border-radius: 10px;
       margin-left: 10px;
-  margin-right: 10px;
+      margin-right: 10px;
 }
     
     .comentario{
@@ -357,10 +358,237 @@
           margin-top: 5rem;
           font-size: 20px;
   }
+  /*input do modal de add comentario*/
+#inputConteudoCom{
+  margin-top: 10px;
+  width:fit-content;
+  min-width: 250px;
+  height: fit-content;
+  padding: 5px;
+  border: 1px solid #0893BF;;
+  background-color: transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: white;
+  
+}
+}
 
- 
+  @media (min-width:768px ) and (max-width:1023px){
+    /*botoes do modal de deixar comentario*/
+    #salvarBtnCom{
+      width: 30%;
+      height: 30px;
+      border-radius: 20px;
+      background-color: rgba(26, 68, 88, 0.4);
+      cursor:pointer;
+      color: white;
+      font-size: 22px;
+      margin-top: 3rem;
+      border-color:#0893BF;
+    }
+  
+  #cancelarBtnCom{
+    width: 30%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: rgba(26, 68, 88, 0.4);
+    cursor:pointer;
+    color: white;
+    font-size: 22px;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    border-color:#0893BF;
+  }
 
+  .comentarios-container{
+    min-width: 100px;
+    height:fit-content;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+  
+  .comentario{
+    border: solid transparent;
+    background-color: #050727;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    width: 780px;
+    height: 100px;
+  }
+  
+  .autorCom{
+    width:fit-content;
+    height:fit-content;
+    color:yellow;
+    font-family: 'Inconsolata';
+    font-size: 20px;
+    margin-left: 6.5rem;
+    font-style: italic;
+}
+  
+  .conteudoCom{
+    font-family: 'Inconsolata';
+    font-size: 20px;
+    margin-left: 6.5rem;
+    width: fit-content;
+    height:fit-content;
+}
+  /*label do modal de atualizar comentario*/
+  #labelUpConteudo{
+    font-size:20px;
+    color:#0893BF;
+    display: block;
+    margin-top: -90px;
+    font-family: 'HANALEI FILL';
+    margin-left: 2px;
+  }
+  
+  .logo-com{
+    width:80px;
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 15px;
+}
+  
+   .mensagemSemPost{
+    font-style: italic;
+    color: yellow;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .noCom-txt{
+    font-style: italic;
+    color: yellow;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .titleCom-txt{
+    font-style: italic;
+    font-size: 18px;
+    text-decoration: underline;
+    text-align: center;
+    font-family: 'HANALEI FILL';
+  }
+
+  .delete-btnCom{
+    border-radius: 10px;
+    background-color: rgb(123, 147, 169, 47%);
+    cursor:pointer;
+    width:60px;
+    color: whitesmoke;
+    float: right;
+    margin-right: 20px;
+    margin-top: -30px;
+    font-size: 15px;
+}
+
+.update-btnCom{
+    border-radius: 10px;
+    background-color: rgb(123, 147, 169, 47%);
+    cursor:pointer;
+    width:70px;
+    color: whitesmoke;
+    float: right;
+    margin-top: -30px;
+    font-size: 15px;
+}
+  
+  /*modal de atualizar comentarios*/
+  #modalUpdateCom{
+      display: none;
+      background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
+      padding: 20px;
+      border-radius: 15px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: 700px;
+      height: 250px;
+      transform: translate(-50%, -50%);
+      border: solid #0893BF;
+      align-items: center;
+  }
+  
+  #modalUpdateCom h2{
+      text-align: center;
+      margin-bottom: 4rem;
+      margin-top: 1rem;
+      font-size: 25px;
+  }
+  /*input conteudo do modal de atualizar comentarios*/
+  #inputUpConteudo{
+      min-width: 700px;
+      width: fit-content;
+      height: fit-content;
+      border: 1px solid #0893BF;
+      background-color: transparent;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 20px;
+      color: white;
+      margin-left: 2px;
+}
+  /*botoes do modal de atualizar comentario*/
+  #cancelarUpBtn, #salvarUpBtn{
+      width: 30%;
+      height: 30px;
+      border-radius: 20px;
+      background-color: rgba(26, 68, 88, 0.4);
+      cursor:pointer;
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 6rem;
+      margin-left: 6rem;
+      border-color:#0893BF;
+      }
+      
+/*modal de deixar comentario*/
+      #modalCom{
+        display: none;
+        background-image: url("../assets/blurry-gradient-haikei\(7\).svg");
+        padding: 20px;
+        border-radius: 15px;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 700px;
+        height: fit-content;
+        transform: translate(-50%, -50%);
+        border:solid #089;
+        text-align: center;
+        margin-bottom: 3rem;
+        margin-top: 5rem;
+        font-size: 20px;
+}
+
+  #modalCom h2{
+    text-align: center;
+    font-size: 25px;
+  }
+
+  /*input do modal de add comentario*/
+  #inputConteudoCom{
+    margin-top: 10px;
+    width:fit-content;
+    min-width: 700px;
+    height: fit-content;
+    padding: 5px;
+    border: 1px solid #0893BF;;
+    background-color: transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: white;
+    
+  }
+
+}
   
     
      
-}
